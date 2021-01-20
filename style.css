@@ -1,0 +1,1023 @@
+body{
+    padding : 0;
+    margin : 0;
+    box-sizing : border-box;
+    /* background-image : url('./images/irrigationbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-color : linear-gradient(90deg, #d3d3ed, #6363c9); */
+}
+.nav{
+    width : 100%;
+    position : absolute;
+    bottom : 0;
+    background-color : #EEE;
+    opacity: 0.8;
+}
+a:hover {
+    color : red;
+    fill : red;
+}
+.header{
+    list-style-type: none;
+    margin : 0;
+    padding : 0;
+}
+.header li{
+    display :inline;
+    float : left;
+    margin : 0.5em 1em;
+}
+.header ul{
+    overflow: hidden;
+    padding: 0 1em;
+}
+.header a{
+    display: block;
+    text-decoration: none;
+    color : #000000;
+    font-size: 0.9em;
+}
+.header a:hover, .header a:active, .header a:visited, .header a:focus{
+    text-decoration : none;
+}
+svg{
+    fill :black;
+} 
+.header{
+    margin-left: 15em;
+}
+li img{
+    width : 1.5em;
+    height : 1.5em;
+}
+#topDemo{
+    width : 100%;
+    top : 0;
+    background-color : #EEE;
+    position : fixed;
+    opacity: 0.8;
+    padding : 0.5em;        
+}
+#topDemo button{
+    border : 0;
+    outline : 0;
+}
+#topDemo button:active, 
+#topDemo button:hover, 
+#topDemo button:visited{
+    border : 0;
+    outline : 0;
+}
+.modal button{
+    border : none;
+    outline : none;
+    background: none;
+}
+.modal button:active, 
+.modal button:hover, 
+.modal button:visited{
+    border : none;
+    outline : none;
+    background: none;
+}
+#homeMain{
+    position:relative;
+    left: 23em;
+    top : 4em;
+    width : 50em;
+    opacity : 0.9;
+    overflow: hidden;
+}
+.homeChild{
+    width : 22em;
+    float : left;
+    margin : 0.3em;
+    background-color : #EEE;
+    min-height : 15.3em;
+    border-radius : 0.5em;
+    overflow: hidden;
+}
+.homeChild button{
+    border :none;
+    outline : none;
+}
+.homeChild button:active, 
+.homeChild button:hover, 
+.homeChild button:visited{
+    border: none;
+    outline : none;
+}
+.homeLg{
+    width : 46.7%;
+    height : 3.3em;
+    background: white;
+    overflow: hidden;
+}
+.homeLg img{
+    width : 1.5em;
+    height : 1.5em;
+}
+
+.leftNav{
+    position : absolute;
+    left : 0;
+    top : 3.3em;
+    background-color : #EEE;
+    width : 20em;
+    height : 34em;
+    overflow-y : scroll;
+}
+.leftNav button{
+    width : 93%;
+    height : 3em;
+    margin-left : 3%;
+    border : none;
+    outline : none;
+}
+.leftNavBtn img{
+    width : 2em;
+    height : 2em;
+}
+.rightNav{
+    position : absolute;
+    right : 0;
+    top : 3.3em;
+    background-color : #EEE;
+    width : 20em;
+    height : 34em;
+    overflow : hidden;
+}
+.rightNav button{
+    width : 93%;
+    height : 3em;
+    margin-left : 3%;
+    border : none;
+    outline : none;
+}
+.rightNavBtn img{
+    width : 2em;
+    height : 2em;
+}
+#alarmMain{
+    position : relative;
+}
+#alarmFirst{
+    position : absolute;
+    left : 25em;
+    top : 5em;
+    width : 22em;
+    background: #EEE;
+    padding : 0.5em;
+    height : 30em;
+    border-radius : 1em;
+}
+#alarmFirst button{
+    background : white;
+    width : 24%;
+    height : 6rem;
+    margin: 0.5%;
+    float : left;
+    overflow: hidden;
+}
+#alarmMain button, 
+#alarmMain button:active, 
+#alarmMain button:hover, 
+#alarmMain button:visited{
+    border:none;
+    outline : none;
+}
+#alarmZones{
+    position : absolute;
+    left : 48em;
+    top : 5em;
+    width : 22em;
+    height : 9em;
+    background: #EEE;
+    border-radius : 0.5em;
+}
+.alarmZones img{
+    width : 1em;
+    height : 1em;
+}
+.alarmZones {
+    width : 31%;
+    float : left;
+    background-color :#ded9d9;
+    margin : 1%;
+    height : 3em;
+    overflow: hidden;
+}
+#alarmWindows{
+    position : absolute;
+    left : 48em;
+    top : 15.5em;
+    width : 22em;
+    height : 9em;
+    background: #EEE;
+    border-radius : 0.5em;
+}
+#alarmDoors{
+    position : absolute;
+    left : 48em;
+    top : 25.5em;
+    width : 22em;
+    height : 9em;
+    background: #EEE;
+    border-radius : 0.5em;
+}
+#hvacHeating{
+    position : absolute;
+    top : 5em;
+    height : 30em;
+    background: #EEE;
+    width : 22em;
+    left : 28em;
+    border-radius : 1em;
+    opacity : 0.9;    
+}
+#hvacGeneral{
+    position : absolute;
+    top : 5em;
+    height : 30em;
+    background: #EEE;
+    width : 22em;
+    left : 4em;
+    border-radius : 1em;
+    opacity : 0.9; 
+}
+#hvacCooling{
+    position : absolute;
+    top : 5em;
+    height : 30em;
+    background: #EEE;
+    width : 22em;
+    left : 52em;
+    border-radius : 1em;
+    opacity : 0.9; 
+}
+#hvacHeating button{
+    width : 31.1%;
+    margin : 1%;
+    float : left;
+    height : 7rem;
+    background : #dbdad7;
+}
+#hvacMain button, 
+#hvacMain button:active, 
+#hvacMain button:hover, 
+#hvacMain button:visited{
+    border : none;
+    outline : none;
+}
+#hvacGeneral button{
+    width : 96%;
+    margin : 1% 1.5%;
+    height : 7rem;
+    background : white;
+}
+#hvacCooling button{
+    width : 31.1%;
+    margin : 1%;
+    float : left;
+    height : 7rem;
+    background : #dbdad7;
+}
+#cinemaMain{
+    position: relative;
+    background-image : url('./images/cinemabg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cinemaControl1{
+    position : absolute;
+    top : 5em;
+    left : 22em;
+    height : 15em;
+    width : 22em;
+    background-color: #a19d9c;
+    padding : 1%;
+    border-radius: 0.5em;
+}
+#cinemaControl2{
+    position : absolute;
+    top : 5em;
+    left : 45em;
+    height : 15em;
+    width : 22em;
+    background-color: #a19d9c;
+    padding : 1%;
+    border-radius : 0.5em;
+}
+#cinemaTv{
+    position : absolute;
+    top : 21em;
+    left : 22em;
+    height : 15em;
+    width : 22em;
+    background-color: #EEE;
+    opacity : 0.9;
+    border-radius : 0.5em;
+}
+#cinemaAudio{
+    position : absolute;
+    top : 21em;
+    left : 45em;
+    height : 15em;
+    width : 22em;
+    background-color: #EEE;
+    opacity : 0.9;
+    border-radius : 0.5em;
+}
+#cinemaMain button, 
+#cinemaMain button:active, 
+#cinemaMain button:hover, 
+#cinemaMain button:visited{
+    border : none;
+    outline : none;
+} 
+.tv-audio {
+    width : 31.2%;
+    margin : 0.5%;
+    height : 4em;
+    background: white;
+    float : left;
+}
+.tv-audio img{
+    width : 1.5em;
+    height : 1.5em;
+}
+#cameraMain{
+    position : relative;
+}
+#camera1{
+    position : absolute;
+    top : 5em;
+    left : 22em;
+    height : 15em;
+    width : 22em;
+    background-color: #EEE;
+    border : 0.5em solid #c0bfc9;
+    border-radius: 0.5em;
+}
+#camera2{
+    position : absolute;
+    top : 5em;
+    left : 45em;
+    height : 15em;
+    width : 22em;
+    background-color: #EEE;
+    border : 0.5em solid #c0bfc9;
+    border-radius : 0.5em;
+}
+#camera3{
+    position : absolute;
+    top : 21em;
+    left : 22em;
+    height : 15em;
+    width : 22em;
+    background-color: #EEE;
+    border : 0.5em solid #c0bfc9;
+    border-radius : 0.5em;
+}
+#camera4{
+    position : absolute;
+    top : 21em;
+    left : 45em;
+    height : 15em;
+    width : 22em;
+    background-color: #EEE;
+    border : 0.5em solid #c0bfc9;
+    border-radius : 0.5em;
+}
+#weatherMain{
+    position : relative;
+    background-image : url('./images/weatherbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#weatherMain button, 
+#weatherMain button:hover, 
+#weatherMain button:active, 
+#weatherMain button:visited{
+    border : none;
+    outline : none;
+}
+#weatherStation{
+    position : absolute;
+    top : 4.5em;
+    left : 12em;
+    width : 22em;
+    height : 31.5em;
+    background-color : #EEE;
+    border-radius : 0.5em;
+    opacity : 0.9;
+}
+#weatherForecast{
+    position : absolute;
+    top : 4.5em;
+    left : 35em;
+    width : 22em;
+    height : 31.5em;
+    background-color : #EEE;
+    border-radius : 0.5em;
+    opacity : 0.9;
+}
+#weatherSunPos{
+    position : absolute;
+    top : 4.5em;
+    left : 58em;
+    width : 22em;
+    height : 31.5em;
+    background-color : #EEE;
+    border-radius : 0.5em;
+    opacity : 0.9;
+}
+.weatherBtn{
+    width : 100%;
+    margin-top : 0.5%;
+    margin-bottom : 0.5%;
+    background : #dadae0;
+    padding : 1%;
+    width : 96%;
+    margin-left : 2%;
+    height : 4.5em;
+}
+.weatherBtn img{
+    width : 2.5em;
+    height : 2.5em;
+    float : left;
+}
+.forecastBtn{
+    width : 29%;
+    height :4.5em;
+    float : left;
+    margin : 0.8% 2%;
+    background : none;
+    overflow: hidden;
+}
+.forecastBtn img{
+    width : 1.8em;
+    height : 1.8em;
+}
+.forecastBtn span{
+    margin : 0;
+    padding : 0;
+}
+#weatherInfo{
+    margin-top : 3em;
+    padding: 1em;
+}
+.dailyStats{
+    float : left;
+    width : 18%;
+    margin : 1% ;
+    overflow: hidden;
+}
+.dailyStats img{
+    width : 1.5em;
+    height : 1.5em;
+}
+.dailyStats span{
+    margin : 0;
+    padding : 0;
+    font-size: 0.8em;
+}
+/* Irrigation */
+#irrigationMain{
+    position : relative;
+}  
+#irrigationBgImg{
+   position : absolute;
+   background-image : url('./images/irrigationbg1.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   width : 55em;
+   height : 33em;
+   overflow : hidden;
+   left : 20em;
+   top : 3.8em;
+} 
+#irrigationBtns{
+    position : absolute;
+    left : 1em;
+    top : 1em;
+    width : 20em;
+    height : 12em;
+    background : #EEE;
+    opacity : 0.9;
+    border-radius : 0.5em;
+}
+#irrigationWs{
+    position : absolute;
+    top: 1em;
+    right : 1em;
+    width : 17em;
+    height : 11.3em;
+    background : #EEE;
+    opacity : 0.9;
+    border-radius : 0.4em;
+}
+.irControl{
+   /* background : none; */
+    width : 30%;
+    margin : 1% 1.5%;
+    float : left;
+    height : 5.6em;
+    overflow: hidden;
+}
+.irControl img{
+    width : 1.5em;
+    height : 1.5em;
+}
+#irrigationMain button,  
+#irrigationMain button:hover,  
+#irrigationMain button:active,  
+#irrigationMain button:visited{
+    border : none;
+    outline : none;
+}
+.irWs {
+    width : 48%;
+    margin : 1%;
+    float : left;
+    height : 4.1em;
+    overflow: hidden;
+}
+.irWs img{
+    width : 1em;
+    height : 1em;
+}
+.irZone{
+    width : 14em;
+    height : 4em;
+    background: #EEE;
+    opacity : 0.9;
+    border-radius : 0.3em;
+}
+.zoneBtn{
+    width : 29%;
+    height : 3.5em;
+    margin : 2%;
+    float : left;
+    overflow: hidden;
+}
+.zoneBtn img{
+    width : 1.5em;
+    height : 1.5em;
+}
+/* Rooms */
+#roomsMain{
+    position : relative;
+}
+#roomsBg{
+    position : absolute;
+    background-image : url('./images/roomsbg3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width : 65em;
+    height : 34em;
+    overflow : hidden;
+    left : 15em;
+    top : 3.3em;
+}
+.roomsBtnSm{
+    width : 4em;
+    height : 4em;
+    /*background : #EEE; */
+    overflow: hidden;
+    border-radius : 0.4em;
+    position: absolute;
+    opacity : 0.8;
+}
+#roomsBg img{
+    width : 2em;
+    height : 2em;
+}
+#roomsBg span{
+    font-size : 0.9em;
+}
+#roomsMain button,  
+#roomsMain button:active,  
+#roomsMain button:hover,  
+#roomsMain button:visited{
+    border : none;
+    outline: none;
+}
+.roomsBtnLg{
+    width : 9em;
+    height: 3em;
+    position: absolute;
+    border-radius: 0.4em;
+    /*background: #EEE; */
+    overflow: hidden;
+    opacity : 0.8;
+}
+/* Consumption */
+#consumptionMain{
+    position : relative;
+} 
+#consumptionMain button, 
+#consumptionMain button:active, 
+#consumptionMain button:hover, 
+#consumptionMain button:visited{
+    border : none;
+    outline : none;
+}
+/* Shades */
+#shadesBlinds{
+    position: absolute;
+    width : 23em;
+    height : 31em;
+    top : 5em;
+    left : 10em;
+    background : #EEE;
+    border-radius : 0.5em;
+}
+#shadesPh{
+    position: absolute;
+    width : 23em;
+    height : 31em;
+    top : 5em;
+    left : 34em;
+    background : #EEE;
+    border-radius : 0.5em;
+}
+#shadesSp{
+    position: absolute;
+    width : 23em;
+    height : 31em;
+    top : 5em;
+    left : 58em;
+    background : #EEE;
+    border-radius : 0.5em;
+}
+#shadesMain button, 
+#shadesMain button:active, 
+#shadesMain button:hover, 
+#shadesMain button:visited{
+    border : none;
+    outline : none;
+}
+#shadesMain button{
+    background : white;
+    height : 4.5em;
+}
+.shadesLg {
+    width : 96%;
+    margin : 0.5% 2%;
+}
+.shadesSm{
+    width : 47.5%;
+    float : left;
+}
+/* Pool */
+#poolMain{
+    position: relative;
+}
+#poolMain button, 
+#poolMain button:active, 
+#poolMain button:hover, 
+#poolMain button:visited{
+    border : none;
+    outline : none;
+}
+.poolSm{
+    width : 4em;
+    height : 1.8em;
+    background: #EEE;
+    opacity: 0.9;
+    position: absolute;
+    overflow: hidden;
+}
+.poolLg{
+    width : 4em;
+    height : 4em;
+    position : absolute;
+    opacity : 0.9;
+    overflow: hidden;
+}
+.poolLg img{
+    width : 1.5em;
+    height : 1.5em;
+}
+/* Settings */
+#settingsMain{
+    position: relative;
+}
+#settingsShades{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    top : 5em;
+    left : 3em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#settingsSockets{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    top : 5em;
+    left : 26em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#settingsHeating{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    top : 5em;
+    left : 49em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#settingsCooling{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    top : 5em;
+    left : 72em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#settingsMain button,
+#settingsMain button:active,
+#settingsMain button :hover,
+#settingsMain button:visited{
+    border : none;
+    outline : none;
+}
+.settingsBtnSm{
+    width : 46.2%;
+    background: white;
+    height : 5em;
+    float : left;
+}
+.settingsBtnLg{
+    width : 95%;
+    height : 4em;
+    background: white;
+}
+/* Kitchen */
+#kitchenMain{
+    position: relative;
+}
+#kitchenLighting{
+    position: absolute;
+    left : 25em;
+    top : 5em;
+    width : 22em;
+    height: 30em;
+    background: #EEE;
+    opacity: 0.9;
+    border-radius: 0.5em;
+}
+#kitchenOthers{
+    position: absolute;
+    left : 48em;
+    top : 5em;
+    width : 22em;
+    height: 30em;
+    background: #EEE;
+    opacity: 0.9;
+    border-radius: 0.5em;
+}
+.kitchenLg{
+    width : 96%;
+    margin: 0.5% 2%;
+    background: white;
+    height : 4.5em;
+}
+#kitchenMain button, 
+#kitchenMain button:active, 
+#kitchenMain button:hover, 
+#kitchenMain button:visited{
+    border: none;
+    outline : none;
+}
+#kitchenMain img{
+    width : 2em;
+    height : 2em;
+}
+#kitchenSm{
+    width : 30%;
+    float : left;
+    height : 5em;
+    background: none;
+}
+
+#bathroomVentMain{
+    position : relative;
+}
+#bathroomVent{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    left : 35em;
+    top : 5em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#bathroomVentMain button, 
+#bathroomVentMain button:hover, 
+#bathroomVentMain button:active, 
+#bathroomVentMain button:visited{
+    border : none;
+    outline : none;
+}
+.ventLg{
+    width : 96%;
+    height : 9.55em;
+    background: white;
+}
+
+#bathroomHeaterMain{
+    position : relative;
+}
+#bathroomHeater{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    left : 35em;
+    top : 5em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#bathroomHeaterMain button, 
+#bathroomHeaterMain button:hover, 
+#bathroomHeaterMain button:active, 
+#bathroomHeaterMain button:visited{
+    border : none;
+    outline : none;
+}
+.bathroomLg{
+    width : 96%;
+    height : 4.5em;
+    background: white;
+}
+/* bath room */
+#bathroomMain{
+    position : relative;
+}
+#bathroomLighting{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    left : 35em;
+    top : 5em;
+    background: #EEE;
+    border-radius: 0.5em;
+}
+#bathroomMain button, 
+#bathroomMain button:hover, 
+#bathroomMain button:active, 
+#bathroomMain button:visited{
+    border : none;
+    outline : none;
+}
+.bathroomLg{
+    width : 96%;
+    height : 4.5em;
+    background: white;
+}
+/* bed room */
+#bedroomMain{
+    position : relative;
+}
+#bedroomLighting{
+    position : absolute;
+    width : 22em;
+    height : 30em;
+    left : 15em;
+    top : 5em;
+    background : #EEE;
+    border-radius: 0.5em;
+}
+#bedroomShades{
+    position : absolute;
+    width : 22em;
+    height : 30em;
+    left : 38em;
+    top : 5em;
+    background : #EEE;
+    border-radius: 0.5em;
+}
+#bedroomHeating{
+    position : absolute;
+    width : 22em;
+    height : 30em;
+    left : 61em;
+    top : 5em;
+    background : #EEE;
+    border-radius: 0.5em;
+}
+.bedroomLg{
+    width : 96%;
+    height : 4.5em;
+    background: white;
+}
+#bedroomMain button, 
+#bedroomMain button:active,
+#bedroomMain button:hover, 
+#bedroomMain button:visited{
+    border : none;
+    outline : none;
+}
+.upColor{
+    background-color: #afb0b3;
+}
+.downColor{
+    background-color: white;
+}
+/* outside  */
+#outsideMain{
+    position : relative;
+}
+#outsideDoors{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    left : 25em;
+    top : 5em;
+    background: #EEE;
+    border-radius: 0.5em;
+    opacity : 0.9;
+}
+#outsideLights{
+    position: absolute;
+    width : 22em;
+    height : 30em;
+    left : 48em;
+    top : 5em;
+    background: #EEE;
+    border-radius: 0.5em;
+    opacity : 0.9;
+}
+#outsideMain button, 
+#outsideMain button:hover, 
+#outsideMain button:active, 
+#outsideMain button:visited{
+    border : none;
+    outline : none;
+}
+.outsideLg{
+    width : 96%;
+    height : 4.5em;
+    background: white;
+}
+
+button{
+    overflow: hidden;
+}
+/* living room */
+#livingroomMain{
+    position: relative;
+}
+#livingroomBg{
+    position : absolute;
+    background-image : url('./images/livingroombg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width : 65em;
+    height : 34em;
+    overflow : hidden;
+    left : 15em;
+    top : 3.3em;
+}
+#lrSitePoint{
+    position: absolute;
+    width : 15em;
+    height : 8.5em;
+    top : 17em;
+    left : 3em;
+    background: #EEE;
+    opacity: 0.9;
+    border-radius: 0.2em;
+}
+#livingroomMain button, 
+#livingroomMain button:active, 
+#livingroomMain button:hover, 
+#livingroomMain button:visited{
+    border : none;
+    outline : none;
+}
+.livingroomSm{
+    width : 4.2em;
+    height : 4.2em;
+    opacity : 0.8;
+    border-radius: 0.4em;
+    position: absolute;
+}
+.livingroomSm img{
+    width : 2em;
+    height : 2em;
+}
+#livingroomIp, 
+#livingroomIp:hover, 
+#livingroomIp:active, 
+#livingroomIp:visited,
+#livingroomIp:focus{ 
+    border: none;
+    outline : none;
+}

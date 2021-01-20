@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+    </style>
+    
+</head>
+<body ng-app="mainApp" style="background-image: url('./images/linearbg.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/settings.svg"  /></button>
+      <button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;"></button>
+      <span style="margin-left:35em;">Settings</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        
+        <div id="settingsMain">
+            <div id="settingsShades">
+                <h5 style="text-align: center; margin:0; padding:0;">Shades</h5>
+                <button class="settingsBtnSm" style="margin: 2% 0.5% 1% 2.5%">
+                    <img src="./icons/settingsbulb.svg" width="40em" height="40em" />
+                    <a data-target="#settingsShades1" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em; position: absolute; top:3.5em;left:7em"></a><br/>
+                    <span style="font-size: 0.8em;">Presence Day</span>
+                </button>
+                <button class="settingsBtnSm" style="margin: 2% 2.5% 1% 0.5%">
+                    <img src="./icons/settingsbulb.svg" width="40em" height="40em" />
+                    <a data-target="#settingsShades2" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Absence Day</span>
+                </button>
+                <button class="settingsBtnSm" style="margin: 0.25% 0.5% 1% 2.5%">
+                    <img src="./icons/settingsbulb.svg" width="40em" height="40em" />
+                    <a data-target="#settingsShades3" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Presence evening</span>
+                </button>
+                <button class="settingsBtnSm" style="margin: 0.25% 2.5% 1% 0.5%">
+                    <img src="./icons/settingsbulb.svg" width="40em" height="40em" />
+                    <a data-target="#settingsShades4" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Absence Evening</span>
+                </button>
+                <button class="settingsBtnSm" style="margin: 0.25% 0.5% 1% 2.5%">
+                    <img src="./icons/settingsbulb.svg" width="40em" height="40em" />
+                    <a data-target="#settingsShades5" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Presence Sleep</span>
+                </button>
+                <button class="settingsBtnSm" style="margin: 0.25% 2.5% 1% 0.5%">
+                    <img src="./icons/settingsbulb.svg" width="40em" height="40em" />
+                    <a data-target="#settingsShades6" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Absence Sleep</span>
+                </button>
+                <button style="width:42%;height:5em;margin: 30% 2.5% 1% 5%; float: left;" ng-click="settingsShadesSunProtection=!settingsShadesSunProtection" ng-class="settingsShadesSunProtection ? 'btn-success':'btn'">
+                    <img src="./icons/shades.svg" width="30em" height="30em" />
+                    <a><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Sun Protection</span>
+                    <span ng-bind="settingsShadesSunProtection ? 'ON':'OFF'"></span>
+                </button>
+                <button style="width:42%;height:5em;margin: 30% 2.5% 1% 0.5%; float: left;" ng-click="settingsShadesPassiveHeating=!settingsShadesPassiveHeating" ng-class="settingsShadesPassiveHeating ? 'btn-success':'btn'">
+                    <img src="./icons/shades.svg" width="30em" height="30em" />
+                    <a><img src="./icons/settings.svg" style="width:1em; height:1em;"></a><br/>
+                    <span style="font-size: 0.8em;">Passive Heating</span>
+                    <span ng-bind="settingsShadesPassiveHeating ? 'ON':'OFF'"></span>
+                </button>
+            </div>
+            <div id="settingsSockets">
+                <h5 style="text-align: center; margin:0; padding:0;">Sockets</h5>
+                <button class="settingsBtnSm" style="margin: 2% 0.5% 1% 2.5%" ng-click="settingsSocket1=!settingsSocket1">
+                    <img src="./icons/socket.svg" width="30em" height="30em" />
+                    <br/>
+                    <span style="font-size: 0.8em;">Socket</span>
+                    <span ng-bind="settingsSocket1 ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsSocketModal1" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;position: absolute; top:2.5em ; left: 7em;"></a>
+                <button class="settingsBtnSm" style="margin: 2% 2.5% 1% 0.5%" ng-click="settingsSocket2=!settingsSocket2">
+                    <img src="./icons/socket.svg" width="30em" height="30em" />
+                    <br/>
+                    <span style="font-size: 0.8em;">Socket</span>
+                    <span ng-bind="settingsSocket2 ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsSocketModal2" data-toggle="modal"><img src="./icons/settings.svg" style="width:1em; height:1em;position: absolute; top: 2.5em; left: 17.5em;"></a>
+            </div>
+            <div id="settingsHeating">
+                <h5 style="text-align: center; margin:0; padding:0;">Heating</h5>
+                <button class="settingsBtnLg" style="margin: 2% 2.5% 0.25% 2.5%" ng-click="settingsHeatingPresence=!settingsHeatingPresence">
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Presence</span>
+                    <span style="float: right;" ng-bind="settingsHeatingPresence ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsHeating1" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left;position: absolute; top:2.5em; left: 2.9em;"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsHeatingAbsence=!settingsHeatingAbsence"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Absence</span>
+                    <span style="float: right;" ng-bind="settingsHeatingAbsence ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsHeating2" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; top:6.7em; left: 2.9em"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsHeatingSleep=!settingsHeatingSleep"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Sleep</span>
+                    <span style="float: right;" ng-bind="settingsHeatingSleep ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsHeating3" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; left: 2.9em; top:11em"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsHeatingVocation=!settingsHeatingVocation"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Vocation</span>
+                    <span style="float: right;" ng-bind="settingsHeatingVocation ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsHeating4" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left;position: absolute; top: 15.3em; left: 2.9em;"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsHeatingOff=!settingsHeatingOff"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">OFF</span>
+                    <span style="float: right;" ng-bind="settingsHeatingOff ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsHeating5" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; top:19.5em; left: 2.9em;"></a>
+                <button type="button" style="width: 50%; margin: 4% 1% 1% 25%; height: 5em" ng-click="settingsHeatingSchedule=!settingsHeatingSchedule" ng-class="settingsHeatingSchedule ? 'btn-success' : 'btn'">
+                    <img src="./icons/hvacheating.svg" width="30em" height="30em"><br/>
+                    <span>Schedule</span> <span ng-bind="settingsHeatingSchedule ? 'ON': 'OFF'"></span>
+                </button>
+            </div>
+            <div id="settingsCooling">
+                <h5 style="text-align: center; margin:0; padding:0;">Cooling</h5>
+                <button class="settingsBtnLg" style="margin: 2% 2.5% 0.25% 2.5%" ng-click="settingsCoolingPresence=!settingsCoolingPresence">
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Presence</span>
+                    <span style="float: right;" ng-bind="settingsCoolingPresence ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsCooling1" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left;position: absolute;top:2.5em; left: 2.9em"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsCoolingAbsence=!settingsCoolingAbsence"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Absence</span>
+                    <span style="float: right;" ng-bind="settingsCoolingAbsence ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsCooling2" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; top: 6.7em; left: 2.9em"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsCoolingSleep=!settingsCoolingSleep"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Sleep</span>
+                    <span style="float: right;" ng-bind="settingsCoolingSleep ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsCooling3" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; top: 11em; left : 2.9em;"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsCoolingVocation=!settingsCoolingVocation"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">Vocation</span>
+                    <span style="float: right;" ng-bind="settingsCoolingVocation ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsCooling4" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; top: 15.3em; left : 2.9em;"></a>
+                <button class="settingsBtnLg" style="margin: 0.25% 2.5% 0.25% 2.5%" ng-click="settingsCoolingOff=!settingsCoolingOff"> 
+                    <img src="./icons/settingsbulb.svg" width="30em" height="30em" style="float:left;" />
+                    
+                    <span style="float: left;margin-left: 1em; font-size: 1.2em;">OFF</span>
+                    <span style="float: right;" ng-bind="settingsCoolingOff ? 'ON':'OFF'"></span>
+                </button>
+                <a data-target="#settingsCooling5" data-toggle="modal"><img src="./icons/settings.svg" width="15em" height="15em" style="float:left; position: absolute; top: 19.5em; left: 2.9em"></a>
+                <button type="button" style="width: 50%; margin: 4% 1% 1% 25%; height: 5em" ng-click="settingsCoolingSchedule=!settingsCoolingSchedule" ng-class="settingsCoolingSchedule ? 'btn-success' : 'btn'">
+                    <img src="./icons/hvacheating.svg" width="30em" height="30em"><br/>
+                    <span>Schedule</span> <span ng-bind="settingsCoolingSchedule ? 'ON': 'OFF'"></span>
+                </button>
+            </div>
+            <!-- Shades Presence day-->
+            <div class="modal fade" id="settingsShades1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:15em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Presence Day</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Bed room</span>
+                                <span style="float:right; font-size: 1em;">60 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room2</span>
+                                <span style="float:right; font-size: 1em;">30 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;">0 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room1</span>
+                                <span style="float:right; font-size: 1em;">50 %</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" style="background-color:#ded9d9;">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shades Absence day-->
+            <div class="modal fade" id="settingsShades2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:15em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Absence Day</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Bed room</span>
+                                <span style="float:right; font-size: 1em;">60 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room2</span>
+                                <span style="float:right; font-size: 1em;">30 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;">0 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room1</span>
+                                <span style="float:right; font-size: 1em;">50 %</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" style="background-color:#ded9d9;">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shades Presence evening-->
+            <div class="modal fade" id="settingsShades3" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:20em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Presence Evening</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Bed room</span>
+                                <span style="float:right; font-size: 1em;">60 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room2</span>
+                                <span style="float:right; font-size: 1em;">30 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;">0 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room1</span>
+                                <span style="float:right; font-size: 1em;">50 %</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" style="background-color:#ded9d9;">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shades Absence evening-->
+            <div class="modal fade" id="settingsShades4" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:20em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Absence Evening</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Bed room</span>
+                                <span style="float:right; font-size: 1em;">60 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room2</span>
+                                <span style="float:right; font-size: 1em;">30 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;">0 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room1</span>
+                                <span style="float:right; font-size: 1em;">50 %</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" style="background-color:#ded9d9;">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shades pesence sleep-->
+            <div class="modal fade" id="settingsShades5" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:25em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Presence Sleep</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Bed room</span>
+                                <span style="float:right; font-size: 1em;">60 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room2</span>
+                                <span style="float:right; font-size: 1em;">30 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;">0 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room1</span>
+                                <span style="float:right; font-size: 1em;">50 %</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" style="background-color:#ded9d9;">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shades absence sleep-->
+            <div class="modal fade" id="settingsShades6" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:15em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Absence Sleep</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Bed room</span>
+                                <span style="float:right; font-size: 1em;">60 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room2</span>
+                                <span style="float:right; font-size: 1em;">30 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;">0 %</span>
+                            </button><hr/>
+                            <button class="shadesLg">
+                                <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Living room1</span>
+                                <span style="float:right; font-size: 1em;">50 %</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" style="background-color: #ded9d9;">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- heating presence -->
+            <div class="modal" id="settingsHeating1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Presence</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingPresenceBSV1">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingPresenceBSV1}}.0 &#8451;</span>
+                            </button><hr/>
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingPresenceBSV2">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingPresenceBSV2}}.0 &#8451;</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer" >
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingPresenceBSV1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingPresenceBSV1=20">
+                            <button type="button" ng-disabled="(settingsHeatingPresenceBSV1+1)>30" ng-click="settingsHeatingPresenceBSV1=settingsHeatingPresenceBSV1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingPresenceBSV1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingPresenceBSV1>7 ? settingsHeatingPresenceBSV1=settingsHeatingPresenceBSV1-1: settingsHeatingPresenceBSV1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingPresenceBSV2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingPresenceBSV2=22">
+                            <button type="button" ng-disabled="(settingsHeatingPresenceBSV2+1)>30" ng-click="settingsHeatingPresenceBSV2=settingsHeatingPresenceBSV2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingPresenceBSV2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingPresenceBSV2>7 ? settingsHeatingPresenceBSV2=settingsHeatingPresenceBSV2-1 : settingsHeatingPresenceBSV2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Heating Absence-->
+            <div class="modal" id="settingsHeating2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Absence</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingAbsenceBSV1">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingAbsenceBSV1}}.0 &#8451;</span>
+                            </button><hr/>
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingAbsenceBSV2">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingAbsenceBSV2}}.0 &#8451;</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingAbsenceBSV1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingAbsenceBSV1=20">
+                            <button type="button" ng-disabled="(settingsHeatingAbsenceBSV1+1)>30" ng-click="settingsHeatingAbsenceBSV1=settingsHeatingAbsenceBSV1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingAbsenceBSV1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingAbsenceBSV1>7 ? settingsHeatingAbsenceBSV1=settingsHeatingAbsenceBSV1-1 : settingsHeatingAbsenceBSV1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingAbsenceBSV2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingAbsenceBSV2=22">
+                            <button type="button" ng-disabled="(settingsHeatingAbsenceBSV2+1)>30" ng-click="settingsHeatingAbsenceBSV2=settingsHeatingAbsenceBSV2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingAbsenceBSV2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingAbsenceBSV2>7 ? settingsHeatingAbsenceBSV2=settingsHeatingAbsenceBSV2-1 : settingsHeatingAbsenceBSV2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Heating sleep-->
+            <div class="modal" id="settingsHeating3" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Sleep</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingSleepBSV1">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingSleepBSV1}}.0 &#8451;</span>
+                            </button><hr/>
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingSleepBSV2">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingSleepBSV2}}.0 &#8451;</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingSleepBSV1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingSleepBSV1=20">
+                            <button type="button" ng-disabled="(settingsHeatingSleepBSV1+1)>30" ng-click="settingsHeatingSleepBSV1=settingsHeatingSleepBSV1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingSleepBSV1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingSleepBSV1>7 ? settingsHeatingSleepBSV1=settingsHeatingSleepBSV1-1: settingsHeatingSleepBSV1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingSleepBSV2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingSleepBSV2=22">
+                            <button type="button" ng-disabled="(settingsHeatingSleepBSV2+1)>30" ng-click="settingsHeatingSleepBSV2=settingsHeatingSleepBSV2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingSleepBSV2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingSleepBSV2>7 ? settingsHeatingSleepBSV2=settingsHeatingSleepBSV2-1 : settingsHeatingSleepBSV2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Vocation-->
+            <div class="modal" id="settingsHeating4" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Vocation</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" data-target="#heatingVocationBSV1" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingVocationBSV1}}.0 &#8451;</span>
+                            </button><hr/>
+                            <button class="shadesLg"data-target="#heatingVocationBSV2" data-toggle="modal" >
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingVocationBSV2}}.0 &#8451;</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingVocationBSV1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingVocationBSV1=20">
+                            <button type="button" ng-disabled="(settingsHeatingVocationBSV1+1)>30" ng-click="settingsHeatingVocationBSV1=settingsHeatingVocationBSV1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingVocationBSV1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingVocationBSV1>7 ? settingsHeatingVocationBSV1=settingsHeatingVocationBSV1-1 : settingsHeatingVocationBSV1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingVocationBSV2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingVocationBSV2=22">
+                            <button type="button" ng-disabled="(settingsHeatingVocationBSV2+1)>30" ng-click="settingsHeatingVocationBSV2=settingsHeatingVocationBSV2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingVocationBSV2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingVocationBSV2>7 ? settingsHeatingVocationBSV2=settingsHeatingVocationBSV2-1 : settingsHeatingVocationBSV2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Heating Off -->
+            <div class="modal" id="settingsHeating5" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">OFF</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingOffBSV1">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingOffBSV1}}.0 &#8451;</span>
+                            </button><hr/>
+                            <button class="shadesLg" data-toggle="modal" data-target="#heatingOffBSV2">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Basic set value</span>
+                                <span style="float:right; font-size: 1em;">{{settingsHeatingOffBSV2}}.0 &#8451;</span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingOffBSV1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingOffBSV1=20">
+                            <button type="button" ng-disabled="(settingsHeatingOffBSV1+1)>30" ng-click="settingsHeatingOffBSV1=settingsHeatingOffBSV1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingOffBSV1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingOffBSV1>7 ? settingsHeatingOffBSV1=settingsHeatingOffBSV1-1 : settingsHeatingOffBSV1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="heatingOffBSV2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsHeatingOffBSV2=22">
+                            <button type="button" ng-disabled="(settingsHeatingOffBSV2+1)>30" ng-click="settingsHeatingOffBSV2=settingsHeatingOffBSV2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsHeatingOffBSV2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsHeatingOffBSV2>7 ? settingsHeatingOffBSV2=settingsHeatingOffBSV2-1 : settingsHeatingOffBSV2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cooling presence-->
+            <div class="modal" id="settingsCooling1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Presence</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingPresencePower1=!settingsCoolingPresencePower1">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingPresencePower1 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingPresenceST1" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingPresenceST1}}.0 &#8451;</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingPresencePower2=!settingsCoolingPresencePower2">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingPresencePower2 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingPresenceST2" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingPresenceST2}}.0 &#8451;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingPresenceST1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingPresenceST1=24">
+                            <button type="button" ng-disabled="(settingsCoolingPresenceST1+1)>30" ng-click="settingsCoolingPresenceST1=settingsCoolingPresenceST1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingPresenceST1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingPresenceST1>7 ? settingsCoolingPresenceST1=settingsCoolingPresenceST1-1 : settingsCoolingPresenceST1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingPresenceST2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingPresenceST2=26">
+                            <button type="button" ng-disabled="(settingsCoolingPresenceST2+1)>30" ng-click="settingsCoolingPresenceST2=settingsCoolingPresenceST2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingPresenceST2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingPresenceST2>7 ? settingsCoolingPresenceST2=settingsCoolingPresenceST2-1 : settingsCoolingPresenceST2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cooling Absence -->
+            <div class="modal" id="settingsCooling2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Absence</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingAbsencePower1=!settingsCoolingAbsencePower1">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingAbsencePower1 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingAbsenceST1" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingAbsenceST1}}.0 &#8451;</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingAbsencePower2=!settingsCoolingAbsencePower2">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingAbsencePower2 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingAbsenceST2" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingAbsenceST2}}.0 &#8451;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingAbsenceST1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingAbsenceST1=24">
+                            <button type="button" ng-disabled="(settingsCoolingAbsenceST1+1)>30" ng-click="settingsCoolingAbsenceST1=settingsCoolingAbsenceST1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingAbsenceST1}} &#8451;</h2>
+                            <button type="button"  ng-click="settingsCoolingAbsenceST1>7 ? settingsCoolingAbsenceST1=settingsCoolingAbsenceST1-1 : settingsCoolingAbsenceST1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingAbsenceST2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingAbsenceST2=26">
+                            <button type="button" ng-disabled="(settingsCoolingAbsenceST2+1)>30" ng-click="settingsCoolingAbsenceST2=settingsCoolingAbsenceST2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingAbsenceST2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingAbsenceST2>7 ? settingsCoolingAbsenceST2=settingsCoolingAbsenceST2-1 : settingsCoolingAbsenceST2=7 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cooling Sleep -->
+            <div class="modal" id="settingsCooling3" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Sleep</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingSleepPower1=!settingsCoolingSleepPower1">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingSleepPower1 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-toggle="modal" data-target="#coolingSleepST1">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingSleepST1}}.0 &#8451;</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingSleepPower2=!settingsCoolingSleepPower2">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingSleepPower2 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingSleepST2" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingSleepST2}}.0 &#8451;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingSleepST1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingSleepST1=24">
+                            <button type="button" ng-disabled="(settingsCoolingSleepST1+1)>30" ng-click="settingsCoolingSleepST1=settingsCoolingSleepST1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingSleepST1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingSleepST1>7 ? settingsCoolingSleepST1=settingsCoolingSleepST1-1 : settingsCoolingSleepST1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingSleepST2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingSleepST2=26">
+                            <button type="button" ng-disabled="(settingsCoolingSleepST2+1)>30" ng-click="settingsCoolingSleepST2=settingsCoolingSleepST2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingSleepST2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingSleepST2>7 ? settingsCoolingSleepST2=settingsCoolingSleepST2-1 : settingsCoolingSleepST2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cooling vocation -->
+            <div class="modal" id="settingsCooling4" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Vocation</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingVocationPower1=!settingsCoolingVocationPower1">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingVocationPower1 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingVocationST1" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingVocationST1}}.0 &#8451;</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingVocationPower2=!settingsCoolingVocationPower2">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingVocationPower2 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingVocationST2" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingVocationST2}}.0 &#8451;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingVocationST1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingVocationST1=24">
+                            <button type="button" ng-disabled="(settingsCoolingVocationST1+1)>30" ng-click="settingsCoolingVocationST1=settingsCoolingVocationST1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingVocationST1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingVocationST1>7 ? settingsCoolingVocationST1=settingsCoolingVocationST1-1 : settingsCoolingVocationST1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingVocationST2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingVocationST2=26">
+                            <button type="button" ng-disabled="(settingsCoolingVocationST2+1)>30" ng-click="settingsCoolingVocationST2=settingsCoolingVocationST2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingVocationST2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingVocationST2>7 ? settingsCoolingVocationST2=settingsCoolingVocationST2-1 : settingsCoolingVocationST2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cooling Off -->
+            <div class="modal" id="settingsCooling5" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/settingsbulb.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">OFF</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingOffPower1=!settingsCoolingOffPower1">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingOffPower1 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingOffST1" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingOffST1}}.0 &#8451;</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;">
+                                <img src="./icons/leftarrow.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Mode</span>
+                                <span style="float:right; font-size: 1em;">0</span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" ng-click="settingsCoolingOffPower2=!settingsCoolingOffPower2">
+                                <img src="./icons/electricity.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Power</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsCoolingOffPower2 ? 'ON':'OFF'"></span>
+                            </button>
+                            <button class="shadesLg" style="margin-bottom: 1em;" data-target="#coolingOffST2" data-toggle="modal">
+                                <img src="./icons/temparature.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Set temparature</span>
+                                <span style="float:right; font-size: 1em;">{{settingsCoolingOffST2}}.0 &#8451;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingOffST1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingOffST1=24">
+                            <button type="button" ng-disabled="(settingsCoolingOffST1+1)>30" ng-click="settingsCoolingOffST1=settingsCoolingOffST1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingOffST1}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingOffST1>7 ? settingsCoolingOffST1=settingsCoolingOffST1-1 : settingsCoolingOffST1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="coolingOffST2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:60em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Basic set value</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="settingsCoolingOffST2=26">
+                            <button type="button" ng-disabled="(settingsCoolingOffST2+1)>30" ng-click="settingsCoolingOffST2=settingsCoolingOffST2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                            <h2 style="text-align: center;">{{settingsCoolingOffST2}} &#8451;</h2>
+                            <button type="button" ng-click="settingsCoolingOffST2>7 ? settingsCoolingOffST2=settingsCoolingOffST2-1 : settingsCoolingOffST2=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Socket2 -->
+            <div class="modal fade" id="settingsSocketModal2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:40em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/socket.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Socket</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg"  ng-click="settingsSocketToggle3=!settingsSocketToggle3">
+                                <img src="./icons/socket.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">AV</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsSocketToggle3 ? 'OFF':'ON'"></span>
+                            </button><hr/>
+                            <button class="shadesLg" ng-click="settingsSocketToggle4=!settingsSocketToggle4">
+                                <img src="./icons/socket.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsSocketToggle4 ? 'OFF':'ON'"></span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Socket1 -->
+            <div class="modal fade" id="settingsSocketModal1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:40em;">
+                    <div class="modal-content" >
+                        <div class="modal-header" style="background-color:#ded9d9;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/socket.svg" width="30em" height="30em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Socket</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;">
+                            <button class="shadesLg"  ng-click="settingsSocketToggle1=!settingsSocketToggle1">
+                                <img src="./icons/socket.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">AV</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsSocketToggle1 ? 'ON':'OFF'"></span>
+                            </button><hr/>
+                            <button class="shadesLg" ng-click="settingsSocketToggle2=!settingsSocketToggle2">
+                                <img src="./icons/socket.svg" width="30em" height="30em" style="float: left;" />
+                                <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                                <span style="float:right; font-size: 1em;" ng-bind="settingsSocketToggle2 ? 'ON':'OFF'"></span>
+                            </button><hr/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="glyphicon glyphicon-play" style="float:left">Execute</button>
+                            <button type="button" class="glyphicon glyphicon-pause" style="float:left">Learn</button>
+                            <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    <span style="margin-left: 9em;">Settings</span>
+                </div>
+                <div class="modal-body" style="height:80vh;">
+                   <h3>Language</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+       <nav class="header">
+           <ul>
+               <li><a href="home.html"><img src="./icons/home.svg"  />
+                   <br/>Demo</a></li>
+               <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+                   <br/>Rooms</a></li>
+               <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+                   <br/>Alarm</a></li>
+               <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+                   <br/>HVAC</a></li>
+               <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+                   <br/>Cinema</a></li>
+               <li><a href="shades.html"><img src="./icons/shades.svg"  />
+                   <br/>shades</a></li>
+               <li><a href="camera.html"><img src="./icons/camera.svg"  />
+                   <br/>Camera</a></li>
+               <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+                  <br/> Consumption</a></li>
+               <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+                  <br/>Irrigation</a></li>
+               <li><a href="pool.html"><img src="./icons/pool.svg"  />
+                  <br/>Pool</a></li>
+               <li><a href="weather.html"><img src="./icons/weather.svg"  />
+                  <br/>Weather</a></li>
+               <li><a href="settings.html"><img src="./icons/settings.svg"  />
+                   <br/>Settings</a></li>
+           </ul>
+       </nav>
+    </div>

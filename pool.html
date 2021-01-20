@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        
+    </style>
+    
+</head>
+<body ng-app="mainApp" style="background-image: url('./images/linearbg.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/pool.svg"  /></button>
+      <button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;"></button>
+      <span style="margin-left:35em;">Pool</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="poolMain">
+            <span style="position: absolute;left: 30em; top: 4em"><img src="./icons/swimmingtub.svg" width="500em" height="150em"/></span>
+            <span style="position: absolute; left:52.8em; top:9em; width: 12em; height: 0.1em; border-top:0.3em solid blue"></span>
+            <span style="position: absolute; left:30.8em; top:9em; width: 12em; height: 0.1em; border-top:0.3em solid blue"></span>
+            <span style="position: absolute; left:30.8em; top:9em; width: 0.1em; height: 15em; border-right:0.3em solid blue"></span>
+            <span style="position: absolute; left:64.8em; top:9em; width: 0.1em; height: 15em; border-right:0.3em solid blue"></span>
+            <span style="position: absolute; left:25em; top:24em; width: 40.1em; height: 0.1em; border-top:0.3em solid blue"></span>
+            <span style="position: absolute; left:25em; top:11em; width: 0.1em; height: 13em; border-right:0.3em solid blue"></span>
+            <span style="position: absolute; left:25em; top:11em; width: 5.8em; height: 0.1em; border-top:0.3em solid blue"></span>
+
+            <button class="poolLg" style="left: 22em; top:32.5em">
+                <img src="./icons/temparature.svg" /><br/>
+                <span style="font-size: 0.7em">SpumpOFF</span>
+            </button>
+
+            <button class="poolLg" style="left: 30em; top:4em">
+                <img src="./icons/temparature.svg" /><br/>
+                <span style="font-size: 0.7em">Air 0.0&#8451;</span>
+            </button>
+            <button class="poolLg" style="left: 61em; top:4em">
+                <img src="./icons/wind.svg" /><br/>
+                <span style="font-size: 0.7em; margin: 0; padding: 0; ">wind1.2m/s</span>
+            </button>
+            <button class="poolLg" style="left: 42em; top:6em">
+                <img src="./icons/poolbulb.svg" /><br/>
+                <span style="font-size: 0.7em; margin: 0; padding: 0; ">Light OFF</span>
+            </button>
+
+            <span style="position: absolute; left:53em; top: 6em;"><img src="./icons/paperroll.svg" width="40em" height="40em" /></span>
+            <span style="position: absolute; left:52.8em; top:8.5em; width: 3.3em; height: 0.1em; border-top:0.3em solid #838784"></span>
+            <span style="position: absolute; left:56.1em; top:6em; width: 0.1em; height: 2.8em; border-left:0.3em solid #838784"></span>
+            
+            <span style="position: absolute; left:27.5em; top:9.9em; width: 3.5em; height: 0.1em; border-top:0.3em solid black"></span>
+            <span style="position: absolute; left:64.8em; top:9.9em; width: 3.5em; height: 0.1em; border-top:0.3em solid black"></span>
+            <button class="poolSm" style="left:23.2em; top: 9em; "><span style="font-size: 0.6em;">0.0 &#8451;</span></button>
+            <button class="poolSm" style="left:68.5em; top: 9em; "><span style="font-size: 0.6em;">0.0 &#8451;</span></button>
+            <button class="poolLg" style="left: 68.5em; top:14em">
+                <img src="./icons/electricity.svg" /><br/>
+                <span style="font-size: 0.7em">E.city ON</span>
+            </button>
+            <button class="poolLg" style="left: 68.5em; top:19em" ng-click="poolToggleBtn2 = !poolToggleBtn2" ng-class="poolToggleBtn2 ? 'btn-success':'btn'">
+                <img src="./icons/hvacheating.svg" /><br/>
+                <span ng-bind="poolToggleBtn2 ? 'ON':'OFF'" style="font-size: 0.8em"></span>
+            </button>
+
+            <button class="poolSm" style="left: 59em; top:12em" disabled><span style="font-size: 0.6em;">2500 rpm</span></button>
+            <button class="poolSm" style="left: 59em; top:14em" disabled><span style="font-size: 0.6em;">0.0 hz</span></button>
+            <button class="poolSm" style="left: 59em; top:16em" disabled><span style="font-size: 0.6em;">0.0 mA</span></button>
+            <button class="poolSm" style="left: 59em; top:18em" disabled><span style="font-size: 0.6em;">0</span></button>
+            <button class="poolLg" style="left: 53em; top:13em">
+                <img src="./icons/consumption.svg" /><br/>
+                <span style="font-size: 0.6em">CleaningOFF</span>
+            </button>
+
+            <span style="position: absolute;left: 35em; top: 22em"><img src="./icons/poolac.svg" width="50em" height="50em"/></span>
+            <span style="position: absolute;left: 43em; top: 22em"><img src="./icons/coil.svg" width="50em" height="50em"/></span>
+            <span style="position: absolute;left: 52em; top: 22em"><img src="./icons/pooljar.svg" width="50em" height="50em"/></span> 
+
+            <button class="poolLg" style="left: 31em; top:26.5em" ng-click="poolCooling = !poolCooling" ng-class="poolCooling ? 'btn-success':'btn'">
+                <img src="./icons/poolcooling.svg" /><br/>
+                <span style="font-size: 0.7em;margin:0; padding: 0;">Cool</span>
+                <span ng-bind="poolCooling ? 'ON':'OFF'" style="font-size: 0.7em; margin: 0;padding: 0;"></span>
+            </button>
+            <button class="poolLg" style="left: 35.5em; top:26.5em" ng-click="poolToggleBtn3 = !poolToggleBtn3" ng-class="poolToggleBtn3 ? 'btn-success':'btn'">
+                <img src="./icons/hvacheating.svg" /><br/>
+                <span ng-bind="poolToggleBtn3 ? 'ON':'OFF'" style="font-size: 0.8em"></span>
+            </button>
+            <!-- siteponit1 -->
+            <button class="poolLg" style="left: 31em; top:31em" data-toggle="modal" data-target="#poolSp1">
+                <img src="./icons/temparature.svg" /><br/>
+                <span style="font-size: 0.7em;">SP</span>&nbsp;<span style="font-size: 0.7em;">{{poolSitePoint1}}&#8451;</span>
+            </button>
+
+            <button class="poolLg" style="left: 41em; top:26.5em" ng-click="poolHeating = !poolHeating" ng-class="poolHeating ? 'btn-success':'btn'">
+                <img src="./icons/fire.svg" /><br/>
+                <span style="font-size: 0.7em;margin:0; padding: 0;">Heat</span>
+                <span ng-bind="poolHeating ? 'ON':'OFF'" style="font-size: 0.7em; margin: 0;padding: 0;"></span>
+            </button>
+            <button class="poolLg" style="left: 45.5em; top:26.5em" ng-click="poolToggleBtn4 = !poolToggleBtn4" ng-class="poolToggleBtn4 ? 'btn-success':'btn'">
+                <img src="./icons/hvacheating.svg" /><br/>
+                <span ng-bind="poolToggleBtn4 ? 'ON':'OFF'" style="font-size: 0.8em"></span>
+            </button>
+            <!-- siteponit2 -->
+            <button class="poolLg" style="left: 41em; top:31em" data-target="#poolSp2" data-toggle="modal">
+                <img src="./icons/temparature.svg" /><br/>
+                <span style="font-size: 0.7em;">SP</span>&nbsp;<span style="font-size: 0.7em;">{{poolSitePoint2}}&#8451;</span>
+            </button>
+
+            <!-- poolcleaning-->
+            <button class="poolLg" style="left: 51em; top:26.5em" data-target="#cleaning1" data-toggle="modal">
+                <img src="./icons/pressure.svg" /><br/>
+                <span style="font-size: 0.7em;">clean</span>&nbsp;<span style="font-size: 0.7em;">{{poolCleaning1}}&#8451;</span>
+            </button>
+
+            <button class="poolLg" style="left: 57em; top:26.5em">
+                <img src="./icons/on-off.svg" /><br/>
+                <span style="font-size: 0.7em">Pump ON</span>
+            </button>
+            <button class="poolLg" style="left: 61.5em; top:26.5em" ng-click="poolToggleBtn5 = !poolToggleBtn5" ng-class="poolToggleBtn5 ? 'btn-success':'btn'">
+                <img src="./icons/hvacheating.svg" /><br/>
+                <span ng-bind="poolToggleBtn5 ? 'ON':'OFF'" style="font-size: 0.8em"></span>
+            </button>
+             <!-- poolRoations-->
+             <button class="poolLg" style="left: 57em; top:31em" data-toggle="modal" data-target="#poolRpm">
+                <img src="./icons/pressure.svg" /><br/>
+                <span style="font-size: 0.7em;">RPM</span>&nbsp;<span style="font-size: 0.7em;">{{poolRotations}}</span>
+            </button>
+
+            
+            <span style="position: absolute; left:25em; top:13.4em; width: 5.8em; height: 0.1em; border-top:0.2em solid blue"></span>
+            <button class="poolSm" style="left: 22em; top:12.5em" disabled><span style="font-size: 0.6em;">0.0 rd</span></button>
+            <span style="position: absolute;left: 30em; top: 12.5em"><img src="./icons/speaker.svg" width="25em" height="25em"/></span>
+
+            <span style="position: absolute; left:25em; top:16em; width: 5.8em; height: 0.1em; border-top:0.2em solid blue"></span>
+            <button class="poolSm" style="left: 22em; top:15em" disabled><span style="font-size: 0.6em;">0.0 ppm</span></button>
+            <span style="position: absolute;left: 30em; top: 15em"><img src="./icons/speaker.svg" width="25em" height="25em"/></span>
+            
+            <span style="position: absolute; left:25em; top:18.5em; width: 5.8em; height: 0.1em; border-top:0.2em solid blue"></span>
+            <button class="poolSm" style="left: 22em; top:17.5em" disabled><span style="font-size: 0.6em;">0.0 Ph</span></button>
+            <span style="position: absolute;left: 30em; top: 17.5em"><img src="./icons/speaker.svg" width="25em" height="25em"/></span>
+
+            
+            <span style="position: absolute; left:25em; top:21em; width: 5.8em; height: 0.1em; border-top:0.2em solid blue"></span>
+            <button class="poolLg" style="left: 22em; top:20em" ng-click="poolToggleBtn1 = !poolToggleBtn1" ng-class="poolToggleBtn1 ? 'btn-success':'btn'">
+                <img src="./icons/hvacheating.svg" /><br/>
+                <span ng-bind="poolToggleBtn1 ? 'ON':'OFF'" style="font-size: 0.8em"></span>
+            </button>
+            <span style="position: absolute;left: 30em; top: 20em"><img src="./icons/speaker.svg" width="25em" height="25em"/></span>
+
+            <!-- left side down buttons-->
+            <button class="poolSm" style="left: 22em; top:24.5em" disabled><span style="font-size: 0.6em;">0.0 rpm</span></button>
+            <button class="poolSm" style="left: 22em; top:26.5em" disabled><span style="font-size: 0.6em;">0.0 HZ</span></button>
+            <button class="poolSm" style="left: 22em; top:28.5em" disabled><span style="font-size: 0.6em;">0.0 mA</span></button>
+            <button class="poolSm" style="left: 22em; top:30.5em" disabled><span style="font-size: 0.6em;">0</span></button>
+            <button class="poolLg" style="left: 22em; top:32.5em">
+                <img src="./icons/on-off.svg" /><br/>
+                <span style="font-size: 0.7em">SpumpOFF</span>
+            </button>
+
+            <div class="modal fade" id="poolSp1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Sitepoint</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="poolSitePoint1=20">
+                           <button type="button" ng-click="poolSitePoint1=poolSitePoint1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{poolSitePoint1}} &#8451;</h2>
+                           <button type="button" ng-click="poolSitePoint1=poolSitePoint1-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="poolSp2" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Sitepoint</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="poolSitePoint2=24">
+                           <button type="button" ng-click="poolSitePoint2=poolSitePoint2+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{poolSitePoint2}} &#8451;</h2>
+                           <button type="button" ng-click="poolSitePoint2=poolSitePoint2-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="cleaning1" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/pressure.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Cleaning</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="poolCleaning1=45">
+                           <button type="button" ng-click="poolCleaning1=poolCleaning1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{poolCleaning1}} &#8451;</h2>
+                           <button type="button" ng-click="poolCleaning1=poolCleaning1-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="poolRpm" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/pressure.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Rotations</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="poolRotations=650">
+                           <button type="button" ng-click="poolRotations=poolRotations+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{poolRotations}} rpm</h2>
+                           <button type="button" ng-click="poolRotations=poolRotations-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;position:absolute; left:30em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    <span style="margin-left: 9em;">Settings</span>
+                </div>
+                <div class="modal-body" style="height:80vh;">
+                   <h3>Language</h3>
+                </div>
+            </div>
+        </div>
+      </div>
+    <div class="nav">
+       <nav class="header">
+           <ul>
+               <li><a href="home.html"><img src="./icons/home.svg"  />
+                   <br/>Demo</a></li>
+               <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+                   <br/>Rooms</a></li>
+               <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+                   <br/>Alarm</a></li>
+               <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+                   <br/>HVAC</a></li>
+               <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+                   <br/>Cinema</a></li>
+               <li><a href="shades.html"><img src="./icons/shades.svg"  />
+                   <br/>shades</a></li>
+               <li><a href="camera.html"><img src="./icons/camera.svg"  />
+                   <br/>Camera</a></li>
+               <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+                  <br/> Consumption</a></li>
+               <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+                  <br/>Irrigation</a></li>
+               <li><a href="pool.html"><img src="./icons/pool.svg"  />
+                  <br/>Pool</a></li>
+               <li><a href="weather.html"><img src="./icons/weather.svg"  />
+                  <br/>Weather</a></li>
+               <li><a href="settings.html"><img src="./icons/settings.svg"  />
+                   <br/>Settings</a></li>
+           </ul>
+       </nav>
+    </div>

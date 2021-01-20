@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        
+    </style>
+    
+</head>
+<body ng-app="mainApp" >
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/rooms.svg"  /></button>
+      <button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;visibility: hidden;"></button>
+      <span style="margin-left:35em;">Rooms</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Rooms</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="main">
+<div id="roomsMain">
+    <div id="roomsBg">
+        <button type="button" class="roomsBtnSm" style="left:1em;top:1em;" ng-click="roomsLampOutsideToggle = !roomsLampOutsideToggle" ng-class="roomsLampOutsideToggle ? 'btn-success':'btn'">
+            <img src="./icons/outsidelamp.svg" /><br/>
+            <span ng-bind="roomsLampOutsideToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:1em;top:6em;" ng-click="roomsLampOutsideToggle = !roomsLampOutsideToggle" ng-class="roomsLampOutsideToggle ? 'btn-success':'btn'">
+            <img src="./icons/outsidelamp.svg" /><br/>
+            <span ng-bind="roomsLampOutsideToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <a href="outside.html"><button type="button" class="roomsBtnLg" style="left: 1em ; top: 11em;">
+            <img src="./icons/irrigation.svg" />
+            <span style="margin-left: 1em;">Outside</span>
+            <span style="float:right"><img src="./icons/right.svg" /> </span>
+        </button></a>
+        <a href="livingroom.html"><button type="button" class="roomsBtnLg" style="left: 10em ; top: 19.5em;">
+            <img src="./icons/livingroom.svg"  style="float: left; width: 1.5em; height: 1.5em;" />
+            <span>Livingroom</span>
+            <span style="float:right"><img src="./icons/right.svg" /> </span>
+        </button></a>
+        <button type="button" class="roomsBtnSm" style="left:4em;top:15em;" ng-click="roomsLampOutsideToggle = !roomsLampOutsideToggle" ng-class="roomsLampOutsideToggle ? 'btn-success':'btn'">
+            <img src="./icons/outsidelamp.svg" /><br/>
+            <span ng-bind="roomsLampOutsideToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:15.1em;top:9em;">
+            <img src="./icons/dininglamp.svg" /><br/>
+            <span>ON</span>
+        </button>
+        <a href="kitchen.html"><button type="button" class="roomsBtnLg" style="left: 25em ; top: 9em;">
+            <img src="./icons/kitchen.svg" />
+            <span>Kitchen</span>
+            <span style="float:right"><img src="./icons/right.svg" /> </span>
+        </button></a>
+        <button type="button" class="roomsBtnSm" style="left:10em;top:25em;" data-toggle="modal" data-target="#roomsModal1" ng-click="roomsFan1Speed" ng-class="roomsFan1Speed">
+            <img src="./icons/fan.svg" /><br/>
+            <span>{{roomsFan1Speed}}</span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:3em;top:27em;" ng-click="roomsLivingroomAcToggle = !roomsLivingroomAcToggle" ng-class="roomsLivingroomAcToggle ? 'btn-warning':'btn'">
+            <img src="./icons/ac.svg" /><br/>
+            <span ng-bind="roomsLivingroomAcToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:50em;top:2em;" ng-click="roomsBedroomAcToggle = !roomsBedroomAcToggle" ng-class="roomsBedroomAcToggle ? 'btn-warning':'btn'">
+            <img src="./icons/ac.svg" /><br/>
+            <span ng-bind="roomsBedroomAcToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <a href="bedroom.html"><button type="button" class="roomsBtnLg" style="left: 49em ; top: 8em;">
+            <img src="./icons/bedroom.svg" />
+            <span>Bedroom</span>
+            <span style="float:right"><img src="./icons/right.svg" /> </span>
+        </button></a>
+        <button type="button" class="roomsBtnSm" style="left:55em;top:3em;" ng-click="roomsBedroomLamp1Toggle = !roomsBedroomLamp1Toggle" ng-class="roomsBedroomLamp1Toggle ? 'btn-success':'btn'"> 
+            <img src="./icons/bedlamp.svg" /><br/>
+            <span ng-bind="roomsBedroomLamp1Toggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:59em;top:12em;" ng-click="roomsBedroomLamp2Toggle = !roomsBedroomLamp2Toggle" ng-class="roomsBedroomLamp2Toggle ? 'btn-success':'btn'">
+            <img src="./icons/bedlamp.svg" /><br/>
+            <span ng-bind="roomsBedroomLamp2Toggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:53em;top:12em;" >
+            <img src="./icons/temparature.svg" /><br/>
+            <span>22 &#8451;</span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:59em;top:7em;" >
+            <img src="./icons/cctv.svg" /><br/>
+            <span>50%</span>
+        </button>
+        <a href="bathroom.html"><button type="button" class="roomsBtnLg" style="left: 52em ; top: 21em;">
+            <img src="./icons/bathroom.svg" />
+            <span>Bathroom</span>
+            <span style="float:right"><img src="./icons/right.svg" /> </span>
+        </button></a>
+        <button type="button" class="roomsBtnSm" style="left:59em;top:16.5em;" ng-click="roomsBathroomFanToggle = !roomsBathroomFanToggle" ng-class="roomsBathroomFanToggle ? 'btn-success':'btn'">
+            <img src="./icons/fan.svg" /><br/>
+            <span ng-bind="roomsBathroomFanToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:53em;top:16.5em;" ng-click="roomsBathroomCctvToggle = !roomsBathroomCctvToggle" ng-class="roomsBathroomCctvToggle ? 'btn-primary' : 'btn'">
+            <img src="./icons/cctv.svg" /><br/>
+            <span ng-bind="roomsBathroomCctvToggle ?  'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:16em;top:23em; opacity: 0.5;">
+            <img src="./icons/fire.svg" /><br/>
+            <span>OFF</span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:17em;top:29em;" >
+            <img src="./icons/temparature.svg" /><br/>
+            <span>22 &#8451;</span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:48.5em;top:12em; opacity: 0.5;">
+            <img src="./icons/mobile.svg" /><br/>
+            <span>NO</span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:25em; top: 4em" ng-click="roomsKitchenLampToggle= !roomsKitchenLampToggle " ng-class="roomsKitchenLampToggle ? 'btn-success':'btn'">
+            <img src="./icons/bedlamp.svg" /><br/>
+            <span ng-bind="roomsKitchenLampToggle ? 'ON' : 'OFF'"></span>
+        </button>
+        <button type="button" class="roomsBtnSm" style="left:5em;top:20em; opacity: 0.5;">
+            <img src="./icons/mobile.svg" /><br/>
+            <span>NO</span>
+        </button>
+
+    </div>
+    
+    <div class="modal fade" id="roomsModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:30em;position: absolute; left:10em;">
+            <div class="modal-content" >
+                <div class="modal-header" style="background-color:#EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span><img src="./icons/fan.svg" width="25em" height="25em" /></span>
+                </div>
+                <div class="modal-body" style="height:70vh;" ng-init="roomsFan1Speed='OFF'">
+                   <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="roomsFan1Speed='OFF'" ng-class="roomsFan1Speed : 'btn'">OFF</button><hr>
+                   <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="roomsFan1Speed=1"  ng-class="roomsFan1Speed : 'btn-info'">1</button><hr>
+                   <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="roomsFan1Speed=2"  ng-class="roomsFan1Speed : 'btn-info'">2</button><hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+    <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color : #EEE;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="glyphicon glyphicon-wrench"></span>
+                <span style="margin-left: 9em;">Settings</span>
+            </div>
+            <div class="modal-body" style="height:80vh;">
+               <h3>Language</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav">
+   <nav class="header">
+       <ul>
+           <li><a href="home.html"><img src="./icons/home.svg"  />
+               <br/>Demo</a></li>
+           <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+               <br/>Rooms</a></li>
+           <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+               <br/>Alarm</a></li>
+           <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+               <br/>HVAC</a></li>
+           <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+               <br/>Cinema</a></li>
+           <li><a href="shades.html"><img src="./icons/shades.svg"  />
+               <br/>shades</a></li>
+           <li><a href="camera.html"><img src="./icons/camera.svg"  />
+               <br/>Camera</a></li>
+           <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+              <br/> Consumption</a></li>
+           <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+              <br/>Irrigation</a></li>
+           <li><a href="pool.html"><img src="./icons/pool.svg"  />
+              <br/>Pool</a></li>
+           <li><a href="weather.html"><img src="./icons/weather.svg"  />
+              <br/>Weather</a></li>
+           <li><a href="settings.html"><img src="./icons/settings.svg"  />
+               <br/>Settings</a></li>
+       </ul>
+   </nav>
+</div>
+ 
+
+</body>
+</html>

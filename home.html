@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        
+    </style>
+    
+</head>
+<body ng-app="mainApp"  style="background-image: url('./images/bodybg.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/home.svg"  /></button>
+      <button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;"></button>
+      <span style="margin-left:35em;">Demo</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="main">
+           
+           
+    <div id="homeMain" >
+    <div class="homeChild">
+        <div class="row" >
+            <div class="col-md-7" ng-controller="timeController">
+                <p style="text-align: center; font-size: 2em;margin-top: 1.5em;">{{currentTime | date:'HH:mm:ss'}}</p>
+            </div>
+            <div class="col-md-4" style="padding:1em" ng-controller="dateCtrl">
+                <p style="background: black; color:white;text-align:center;margin: 0;padding: 0.3em 0; border-radius: 0.4em">{{currentMonth}}</p>
+                <p style="background: #a19d92; font-size:3rem;text-align:center; margin: 0; padding: 0;">{{currentDate | date : 'dd'}}</p>
+                <p style="background: #a19d92;text-align:center; margin: 0; padding: 0.3em 0;">{{currentDay}}</p>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+        <div>
+            <button type="button" style="width:25%;height:5em; float:left; margin:2% 1% 1% 10%" id="modePresence" ng-init="demoModes='Presence'" data-toggle="modal" data-target="#homeModal2"><img src="./icons/mode.svg" width="20em" height="20em" /><br/>Mode<br/><span>{{demoModes}}</span></button>
+            <button type="button" style="width:25%;height:5em; float:left; margin:2% 1% 1% 2%" id="haetingMode" ng-init="demoHeating='Automatic'" data-toggle="modal" data-target="#homeModal3"><img src="./icons/modegeneral.svg" width="20em" height="20em" /><br/>Heating<br/>{{demoHeating}}</button>
+            <button type="button" style="width:25%;height:5em; float:left; margin:2% 1% 1% 2%" id="modealarm"><img src="./icons/alarm.svg" width="20em" height="20em" /><br/>alarm<br/><span>.</span></button>
+        </div>
+    </div>
+    <div class="homeChild">
+       <div id="weatherInfo">
+            <button type="button" disabled><img src="./icons/clouds.svg" width="60em" height="60em" style="float:left" />
+                <span style="margin-left: 2em; float: left;">City <br/>Broken clouds</span>
+                <span style="float:left; font-size: 1.5em; margin-left: 1em;">18 &#8451;</span>
+            </button>
+        </div>
+        <div id="dayStats">
+            <button type="button" class="dailyStats" disabled>
+                <img src="./icons/rain.svg" /><br/>
+                <span>Mon<br/>18|20</span>
+            </button>
+            <button type="button" class="dailyStats" disabled>
+                <img src="./icons/clouds.svg" /><br/>
+                <span>Tue<br/>22|24</span>
+            </button>
+            <button type="button" class="dailyStats" disabled>
+                <img src="./icons/rain.svg" /><br/>
+                <span>Wed<br/>19|21</span>
+            </button>
+            <button type="button" class="dailyStats" disabled>
+                <img src="./icons/clouds.svg" /><br/>
+                <span>Thu<br/>17|22</span>
+            </button>
+            <button type="button" class="dailyStats" disabled>
+                <img src="./icons/rain.svg" /><br/>
+                <span>Fri<br/>19|25</span>
+            </button>
+        </div> 
+    </div>
+    <div class="homeChild">
+        <button class="homeLg" style="margin: 2% 0.5% 0.5% 2%">
+            <img src="./icons/rooms.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Floor Plan</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 2% 2% 0.5% 0.5%">
+            <img src="./icons/bedroom.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Living Room</span>
+            <img src="./icons/right.svg"  style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 0.5% 0.5% 0.5% 2%">
+            <img src="./icons/cinema.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Cinema</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 0.5% 2% 0.5% 0.5%">
+            <img src="./icons/alarm.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Alarm</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 0.5% 0.5% 0.5% 2%">
+            <img src="./icons/shades.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Blinds</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 0.5% 2% 0.5% 0.5%">
+            <img src="./icons/electricity.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Power</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 0.5% 0.5% 0.5% 2%">
+            <img src="./icons/irrigation.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Irrigation</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+        <button class="homeLg" style="margin: 0.5% 2% 0.5% 0.5%">
+            <img src="./icons/pool.svg"  style="float: left;" />
+            <span style="float: left;margin-left: 0.5em;">Pool</span>
+            <img src="./icons/right.svg" style="float:right;" />
+        </button>
+    </div>
+    <div class="homeChild">
+        
+    </div>
+
+  </div>
+  <div class="modal fade" id="homeModal2" class="homeModal1" role="dialog">
+    <div class="modal-dialog" style="width:25em;position: absolute; left:10em;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color : #EEE;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                <span style="margin-left: 7em;">Mode</span>
+            </div>
+            <div class="modal-body" style="height:80vh;">
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoModes='Absence'" >Absence</button><hr>
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoModes='Presence'">Presence</button><hr>
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoModes='Sleep'">Sleep</button><hr>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="modal fade" id="homeModal3" class="homeModal1" role="dialog">
+    <div class="modal-dialog" style="width:25em;position: absolute; left:25em;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color : #EEE;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                <span style="margin-left: 7em;">Heating</span>
+            </div>
+            <div class="modal-body" style="height:80vh;">
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoHeating='Automatic'" >Automatic</button><hr>
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoHeating='Manual'">Manual</button><hr>
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoHeating='Vocation'">Vocation</button><hr>
+                <button type="button" style="font-size:2em" data-dismiss="modal" ng-click="demoHeating='OFF'">OFF</button>
+            </div>
+        </div>
+    </div>
+  </div>
+              
+</div>
+    
+
+    
+
+    <div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    <span style="margin-left: 9em;">Settings</span>
+                </div>
+                <div class="modal-body" style="height:80vh;">
+                   <h3>Language</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+       <nav class="header">
+           <ul>
+               <li><a href="home.html"><img src="./icons/home.svg"  />
+                   <br/>Demo</a></li>
+               <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+                   <br/>Rooms</a></li>
+               <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+                   <br/>Alarm</a></li>
+               <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+                   <br/>HVAC</a></li>
+               <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+                   <br/>Cinema</a></li>
+               <li><a href="shades.html"><img src="./icons/shades.svg"  />
+                   <br/>shades</a></li>
+               <li><a href="camera.html"><img src="./icons/camera.svg"  />
+                   <br/>Camera</a></li>
+               <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+                  <br/> Consumption</a></li>
+               <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+                  <br/>Irrigation</a></li>
+               <li><a href="pool.html"><img src="./icons/pool.svg"  />
+                  <br/>Pool</a></li>
+               <li><a href="weather.html"><img src="./icons/weather.svg"  />
+                  <br/>Weather</a></li>
+               <li><a href="settings.html"><img src="./icons/settings.svg"  />
+                   <br/>Settings</a></li>
+           </ul>
+       </nav>
+    </div>
+     
+    
+</body>
+</html>

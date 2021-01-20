@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        
+        
+    </style>
+    
+</head>
+<body ng-app="mainApp" style="background-image: url('./images/linearbg.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/shades.svg"  /></button>
+      <button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;visibility: hidden;"></button>
+      <span style="margin-left:35em;">Shades</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="shadesMain" style="position: relative;">
+            <div id="shadesBlinds">
+                <h5 style="padding : 0; margin: 1% 0; text-align : center;">Blinds</h5>
+                <button class="shadesLg">
+                    <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">Kitchen</span>
+                    <span style="float:right; font-size: 1em;">40 %</span>
+                </button>
+                <button class="shadesLg">
+                    <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">BedRoom</span>
+                    <span style="float:right; font-size: 1em;">20 %</span>
+                </button>
+                <button class="shadesLg">
+                    <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">LivingRoom1</span>
+                    <span style="float:right; font-size: 1em;">30 %</span>
+                </button>
+                <button class="shadesLg">
+                    <img src="./icons/shadeslevel.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">LivingRoom2</span>
+                    <span style="float:right; font-size: 1em;">30 %</span>
+                </button>
+                <button type="button" style="width: 70%; margin: 0.5% 2%; float: left">
+                    <img src="./icons/shades.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">Blinds</span>
+                    <span style="float:right; font-size: 1em;">10%</span>
+                </button>
+                <button type="button" style="width: 24%; margin: 0.5% 2% 0.5% 0; float: left">
+                    <img src="./icons/tilt.svg" width= "20em" height = "20em"><br/>
+                    <span style="font-size : 0.8em">Tilt 100%</span>
+                </button>
+                <button type="button" style="background : none; width: 21%; margin: 0.5% 1% 0.5% 4%; float:left">
+                    <img src="./icons/bottom.svg" width="20em" height="20em"><br/>
+                    <span>Down</span>
+                </button>
+                <button type="button" style="background : none; width: 21%; margin: 0.5% 1% 0.5% 1%; float:left">
+                    <img src="./icons/top.svg" width="20em" height="20em"><br/>
+                    <span>UP</span>
+                </button>
+                <button type="button" style="background : none; width: 21%; margin: 0.5% 1% 0.5% 1%; float:left">
+                    <img src="./icons/sunset.svg" width="20em" height="20em"><br/>
+                    <span>Evening</span>
+                </button>
+                <button type="button" style="background : none; width: 21%; margin: 0.5% 2% 0.5% 1%; float:left">
+                    <img src="./icons/modegeneral.svg" width="20em" height="20em"><br/>
+                    <span>Party</span>
+                </button>
+            </div>
+            <div id="shadesPh">
+                <h5 style="padding : 0; margin: 1% 0; text-align : center;">Passive heating</h5>
+                <button class="shadesLg" ng-click="shadesPassiveHeating= !shadesPassiveHeating">
+                    <img src="./icons/on-off.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">Passive heating</span>
+                    <span style="float:right; font-size: 1.2em;" ng-bind="shadesPassiveHeating ? 'Yes' : 'No'"></span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 0.5% 0.5% 2%;" ng-click="shadesPhUpPosition= !shadesPhUpPosition">
+                    <img src="./icons/top.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.7em">Up position</span>&nbsp;&nbsp; <span ng-bind="shadesPhUpPosition ? 'Yes': 'No'"></span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 2% 0.5% 0.5%;" data-toggle="modal" data-target="#shadesPhUpLimitModal">
+                    <img src="./icons/brightness.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.8em">Up Limit</span>&nbsp;&nbsp; <span>{{shadesPhUpLimit}} Lux</span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 0.5% 0.5% 2%;" ng-click="shadesPhDownPosition= !shadesPhDownPosition">
+                    <img src="./icons/bottom.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.7em">Down position</span>&nbsp;&nbsp; <span ng-bind="shadesPhDownPosition ? 'Yes': 'No'"></span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 2% 0.5% 0.5%;" data-toggle="modal" data-target="#shadesPhDownLimitModal">
+                    <img src="./icons/brightness.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.8em">Down Limit</span>&nbsp;&nbsp; <span>{{shadesPhDownLimit}} Lux</span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 0.5% 0.5% 2%;" data-toggle="modal" data-target="#shadesMaxInsideTemp">
+                    <img src="./icons/temparature.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.8em">Max inside temp</span>&nbsp;&nbsp; <span>{{shadesMaxInsideTempDisp}} &#8451; </span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 2% 0.5% 0.5%;" data-toggle="modal" data-target="#shadesMinOutsideTemp">
+                    <img src="./icons/temparature.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.8em">Min outside temp</span>&nbsp;&nbsp; <span>{{shadesMinOutsideTempDisp}} &#8451;</span>
+                </button>
+            </div>
+            <div id="shadesSp">
+                 <h5 style="padding : 0; margin: 1% 0; text-align : center;">Sun protection</h5>
+                 <button class="shadesLg" ng-click="shadesSunProtection= !shadesSunProtection">
+                    <img src="./icons/on-off.svg" width="30em" height="30em" style="float: left;" />
+                    <span style="float:left; margin-left : 1em; font-size: 1.2em;">Sun Protection</span>
+                    <span style="float:right; font-size: 1.2em;" ng-bind="shadesSunProtection ? 'Yes' : 'No'"></span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 0.5% 0.5% 2%;" ng-click="shadesSpUpPosition= !shadesSpUpPosition">
+                    <img src="./icons/top.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.7em">Up position</span>&nbsp;&nbsp; <span ng-bind="shadesSpUpPosition ? 'Yes': 'No'"></span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 2% 0.5% 0.5%;" data-target="#shadesSpLowLimitModal" data-toggle="modal">
+                    <img src="./icons/brightness.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.8em">Low Limit</span>&nbsp;&nbsp; <span>{{shadesSpLowLimit}} Lux</span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 0.5% 0.5% 2%;" ng-click="shadesSpDownPosition= !shadesSpDownPosition">
+                    <img src="./icons/bottom.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.7em">Down position</span>&nbsp;&nbsp; <span ng-bind="shadesSpDownPosition ? 'Yes': 'No'"></span>
+                </button>
+                <button class="shadesSm" style="margin: 0.5% 2% 0.5% 0.5%;" data-target="#shadesSpUpLimitModal" data-toggle="modal">
+                    <img src="./icons/brightness.svg" width="20em" height="20em"><br/>
+                    <span style="font-size:0.8em">UP Limit</span>&nbsp;&nbsp; <span>{{shadesSpUpLimit}} Lux</span>
+                </button>
+            </div>
+
+            <div class="modal fade" id="shadesPhUpLimitModal" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/brightness.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Up limit</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="shadesPhUpLimit=430">
+                           <button type="button" ng-click="shadesPhUpLimit=shadesPhUpLimit+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{shadesPhUpLimit}} lux</h2>
+                           <button type="button" ng-click="shadesPhUpLimit=shadesPhUpLimit-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="shadesPhDownLimitModal" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/brightness.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Down limit</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="shadesPhDownLimit=345">
+                           <button type="button" ng-click="shadesPhDownLimit=shadesPhDownLimit+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{shadesPhDownLimit}} lux</h2>
+                           <button type="button" ng-click="shadesPhDownLimit=shadesPhDownLimit-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="shadesMaxInsideTemp" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Max inside temp</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="shadesMaxInsideTempDisp=23">
+                           <button type="button" ng-disabled="(shadesMaxInsideTempDisp+1)>30" ng-click="shadesMaxInsideTempDisp=shadesMaxInsideTempDisp+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{shadesMaxInsideTempDisp}} &#8451;</h2>
+                           <button type="button" ng-click="shadesMaxInsideTempDisp>7 ? shadesMaxInsideTempDisp=shadesMaxInsideTempDisp-1 : shadesMaxInsideTempDisp=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="shadesMinOutsideTemp" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 4em; font-size: 1.5em">Min outside temp</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="shadesMinOutsideTempDisp=25">
+                           <button type="button" ng-disabled="(shadesMinOutsideTempDisp+1)>30" ng-click="shadesMinOutsideTempDisp=shadesMinOutsideTempDisp+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{shadesMinOutsideTempDisp}} &#8451;</h2>
+                           <button type="button" ng-click="shadesMinOutsideTempDisp>7 ? shadesMinOutsideTempDisp=shadesMinOutsideTempDisp-1 : shadesMinOutsideTempDisp=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="shadesSpUpLimitModal" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/brightness.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Up limit</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="shadesSpUpLimit=4500">
+                           <button type="button" ng-click="shadesSpUpLimit=shadesSpUpLimit+100"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{shadesSpUpLimit}} lux</h2>
+                           <button type="button" ng-click="shadesSpUpLimit=shadesSpUpLimit-100" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="shadesSpLowLimitModal" class="homeModal1" role="dialog">
+                <div class="modal-dialog" style="width:30em;position: absolute; left:30em;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#EEE;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <span><img src="./icons/brightness.svg" width="25em" height="25em" /></span>
+                            <span style="margin-left: 6em; font-size: 1.5em">Low limit</span>
+                        </div>
+                        <div class="modal-body" style="height:70vh;" ng-init="shadesSpLowLimit=900">
+                           <button type="button" ng-click="shadesSpLowLimit=shadesSpLowLimit+100"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                           <h2 style="text-align: center;">{{shadesSpLowLimit}} lux</h2>
+                           <button type="button" ng-click="shadesSpLowLimit=shadesSpLowLimit-100" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    <span style="margin-left: 9em;">Settings</span>
+                </div>
+                <div class="modal-body" style="height:80vh;">
+                   <h3>Language</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+       <nav class="header">
+           <ul>
+               <li><a href="home.html"><img src="./icons/home.svg"  />
+                   <br/>Demo</a></li>
+               <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+                   <br/>Rooms</a></li>
+               <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+                   <br/>Alarm</a></li>
+               <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+                   <br/>HVAC</a></li>
+               <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+                   <br/>Cinema</a></li>
+               <li><a href="shades.html"><img src="./icons/shades.svg"  />
+                   <br/>shades</a></li>
+               <li><a href="camera.html"><img src="./icons/camera.svg"  />
+                   <br/>Camera</a></li>
+               <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+                  <br/> Consumption</a></li>
+               <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+                  <br/>Irrigation</a></li>
+               <li><a href="pool.html"><img src="./icons/pool.svg"  />
+                  <br/>Pool</a></li>
+               <li><a href="weather.html"><img src="./icons/weather.svg"  />
+                  <br/>Weather</a></li>
+               <li><a href="settings.html"><img src="./icons/settings.svg"  />
+                   <br/>Settings</a></li>
+           </ul>
+       </nav>
+    </div>

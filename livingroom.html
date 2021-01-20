@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        .livingroomOutOnColor{
+            background: #f7f552;
+        }
+    </style>
+    
+</head>
+<body ng-app="mainApp">
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/livingroom.svg"  /></button>
+      <a href="rooms.html"><button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;"></button></a>
+      <span style="margin-left:35em;">Living Room</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 43em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr/>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Rooms</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="main">
+    <div id="livingroomMain">
+        <div id="livingroomBg">
+            <div id="lrSitePoint">
+                <p style="text-align: center; margin:0; padding: 0; font-size: 0.9em;">Sitepoint</p>
+                <button style="width: 96%; height: 3em; background: white; margin: 3% 2% 0.5% 2%" data-target="#livingroom1" data-toggle="modal">
+                    <img src="./icons/temparature.svg" style="width:1.5em; height: 1.5em; float:left;" />
+                    <span style="float:left; margin-left: 0.5em;">Sitepoint</span>
+                    <span style="float:right;">{{livingroomSitePoint1}}.0 &#8451;</span>
+                </button>
+                <button style="width: 96%; height: 3em; background: #aaadab; margin: 0.5% 2% 0.5% 2%">
+                    <img src="./icons/temparature.svg" style="width:1.5em; height: 1.5em; float:left;" />
+                    <span style="float:left; margin-left: 0.5em;">Temparature</span>
+                    <span style="float:right;">22.0 &#8451;</span>
+                </button>
+            </div>
+            <button type="button" class="livingroomSm" style="left: 30em; top : 19em;" ng-click="livingroomOutsideBtn=!livingroomOutsideBtn;" ng-class="livingroomOutsideBtn ? 'livingroomOutOnColor': 'downColor'">
+                <img src="./icons/outside.svg"/><br/>
+                <span  ng-bind="livingroomOutsideBtn ? 'ON':'OFF'"></span>
+            </button>
+            <button type="button" class="livingroomSm" style="left: 42em; top : 28em;" ng-click="livingroomOutsideBtn=!livingroomOutsideBtn" ng-class="livingroomOutsideBtn ? 'livingroomOutOnColor': 'downColor'">
+                <img src="./icons/outside.svg"/><br/>
+                <span  ng-bind="livingroomOutsideBtn ? 'ON':'OFF'"></span>
+            </button>
+            <button type="button" class="livingroomSm" style="left: 50em; top : 18em;" ng-click="livingroomTvSocket=!livingroomTvSocket" ng-class="livingroomTvSocket ? 'btn-success': 'btn'">
+                <img src="./icons/socket.svg"/><br/>
+                <span  ng-bind="livingroomTvSocket ? 'ON':'OFF'"></span>
+            </button>
+            <button style="width:8em; height: 2.5em; background: #EEE;position: absolute; top: 23em;left: 50em; border-radius: 0.5em;opacity: 0.8;">
+                <img src="./icons/cinema.svg" style="width:1.5em; height:1.5em; float: left;" />
+                <span style="float: left; margin-left: 0.5em;">AV</span>
+                <img src="./icons/right.svg" style="width:1em; height:1em; float: right;" />
+            </button>
+            <button style="width:8em; height: 2.5em; background: #EEE;position: absolute; top: 26em;left: 50em; border-radius: 0.5em;opacity: 0.8;">
+                <img src="./icons/cinematv.svg" style="width:1.5em; height:1.5em; float: left;" />
+                <span style="float: left; margin-left: 0.5em;">XBMC</span>
+                <img src="./icons/right.svg" style="width:1em; height:1em; float: right;" />
+            </button>
+            <button type="button" class="livingroomSm" style="left: 10em; top : 1em;" data-target="#livingroom2" data-toggle="modal">
+                <img src="./icons/cctv.svg"/><br/>
+                <span>{{livingroomCctv1}} %</span>
+            </button>
+            <button type="button" class="livingroomSm" style="left: 16em; top : 4em;" data-target="#livingroom3" data-toggle="modal">
+                <img src="./icons/cctv.svg"/><br/>
+                <span>{{livingroomCctv2}} %</span>
+            </button>
+            <button type="button" class="livingroomSm" style="left: 23em; top : 1.5em;" data-target="#livingroom4" data-toggle="modal">
+                <img src="./icons/cctv.svg"/><br/>
+                <span>{{livingroomCctv3}} %</span>
+            </button>
+            <button type="button" class="livingroomSm" style="left: 3em; top : 8em;" data-target="#livingroom5" data-toggle="modal">
+                <img src="./icons/waterlevel.svg"/><br/>
+                <span>{{livingroomLevel1}} %</span>
+            </button>
+            <button type="button" class="livingroomSm" style="left: 15em; top : 10em;" data-toggle="modal" data-target="#livingroom6">
+                <img src="./icons/waterlevel.svg"/><br/>
+                <span>{{livingroomLevel2}} %</span>
+            </button>
+            <input type="color" id="livingroomIp" name="livingroomInputColor" style="position: absolute; width: 10em; height: 2em; top: 10em; left: 50em;border:none; outline: none; offset: none; border-radius: 0.5em;"/>
+            <img src="./icons/filler.svg" style="position: absolute; width: 2em; height: 2em; top:8em; left:54em" />
+        </div>
+        <!-- livingroom site point-->
+        <div class="modal" id="livingroom1" class="homeModal1" role="dialog">
+            <div class="modal-dialog" style="width:30em;position: absolute; left:20em;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:#ded9d9;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                        <span style="margin-left: 5em; font-size: 1.5em">Sitepoint</span>
+                    </div>
+                    <div class="modal-body" style="height:70vh;" ng-init="livingroomSitePoint1=20">
+                        <button type="button" ng-disabled="(livingroomSitePoint1+1)>30" ng-click="livingroomSitePoint1=livingroomSitePoint1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                        <h2 style="text-align: center;">{{livingroomSitePoint1}}</h2>
+                        <button type="button" ng-click="livingroomSitePoint1>7 ? livingroomSitePoint1=livingroomSitePoint1-1 : livingroomSitePoint1=7 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- living room cctv1-->
+        <div class="modal" id="livingroom2" class="homeModal1" role="dialog">
+            <div class="modal-dialog" style="width:20em;position: absolute; left:20em;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:#ded9d9;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><img src="./icons/Cctv.svg" width="25em" height="25em" /></span>
+                        <span style="margin-left: 5em; font-size: 1.5em"></span>
+                    </div>
+                    <div class="modal-body" style="height:70vh;" ng-init="livingroomCctv1=20">
+                        <button type="button" ng-disabled="(livingroomCctv1+10)>100" ng-click="livingroomCctv1=livingroomCctv1+10"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 8em"></button>
+                        <h2 style="text-align: center;">{{livingroomCctv1}}</h2>
+                        <button type="button" ng-click="livingroomCctv1>0 ? livingroomCctv1=livingroomCctv1-10 : livingroomCctv1=0 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 8em"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Living room cctv2 -->
+        <div class="modal" id="livingroom3" class="homeModal1" role="dialog">
+            <div class="modal-dialog" style="width:20em;position: absolute; left:30em;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:#ded9d9;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><img src="./icons/Cctv.svg" width="25em" height="25em" /></span>
+                        <span style="margin-left: 5em; font-size: 1.5em"></span>
+                    </div>
+                    <div class="modal-body" style="height:70vh;" ng-init="livingroomCctv2=30">
+                        <button type="button" ng-disabled="(livingroomCctv2+10)>100" ng-click="livingroomCctv2=livingroomCctv2+10"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 8em"></button>
+                        <h2 style="text-align: center;">{{livingroomCctv2}}</h2>
+                        <button type="button" ng-click="livingroomCctv2>0 ? livingroomCctv2=livingroomCctv2-10 : livingroomCctv2=0 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 8em"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- livingroom cctv4-->
+        <div class="modal" id="livingroom4" class="homeModal1" role="dialog">
+            <div class="modal-dialog" style="width:20em;position: absolute; left:30em;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:#ded9d9;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><img src="./icons/Cctv.svg" width="25em" height="25em" /></span>
+                        <span style="margin-left: 5em; font-size: 1.5em"></span>
+                    </div>
+                    <div class="modal-body" style="height:70vh;" ng-init="livingroomCctv3=10">
+                        <button type="button" ng-disabled="(livingroomCctv3+10)>100" ng-click="livingroomCctv3=livingroomCctv3+10"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 8em"></button>
+                        <h2 style="text-align: center;">{{livingroomCctv3}}</h2>
+                        <button type="button" ng-click="livingroomCctv3>0 ? livingroomCctv3=livingroomCctv3-10 : livingroomCctv3=0 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 8em"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- living room level1 -->
+        <div class="modal" id="livingroom5" class="homeModal1" role="dialog">
+            <div class="modal-dialog" style="width:20em;position: absolute; left:30em;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:#ded9d9;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><img src="./icons/waterlevel.svg" width="25em" height="25em" /></span>
+                        <span style="margin-left: 5em; font-size: 1.5em"></span>
+                    </div>
+                    <div class="modal-body" style="height:70vh;" ng-init="livingroomLevel1=0">
+                        <button type="button" ng-disabled="(livingroomLevel1+10)>100" ng-click="livingroomLevel1=livingroomLevel1+10"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 8em"></button>
+                        <h2 style="text-align: center;">{{livingroomLevel1}}</h2>
+                        <button type="button" ng-click="livingroomLevel1>0 ? livingroomLevel1=livingroomLevel1-10 : livingroomLevel1=0 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 8em"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- livingroom level2-->
+        <div class="modal" id="livingroom6" class="homeModal1" role="dialog">
+            <div class="modal-dialog" style="width:20em;position: absolute; left:30em;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:#ded9d9;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span><img src="./icons/waterlevel.svg" width="25em" height="25em" /></span>
+                        <span style="margin-left: 5em; font-size: 1.5em"></span>
+                    </div>
+                    <div class="modal-body" style="height:70vh;" ng-init="livingroomLevel2=20">
+                        <button type="button" ng-disabled="(livingroomLevel2+10)>100" ng-click="livingroomLevel2=livingroomLevel2+10"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 8em"></button>
+                        <h2 style="text-align: center;">{{livingroomLevel2}}</h2>
+                        <button type="button" ng-click="livingroomLevel2>0 ? livingroomLevel2=livingroomLevel2-10 : livingroomLevel1=0 " class="glyphicon glyphicon-chevron-down" style="margin: 2em 8em"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+    </div>        
+    
+</div>
+
+<div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+    <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color : #EEE;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="glyphicon glyphicon-wrench"></span>
+                <span style="margin-left: 9em;">Settings</span>
+            </div>
+            <div class="modal-body" style="height:80vh;">
+               <h3>Language</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav">
+   <nav class="header">
+       <ul>
+           <li><a href="home.html"><img src="./icons/home.svg"  />
+               <br/>Demo</a></li>
+           <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+               <br/>Rooms</a></li>
+           <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+               <br/>Alarm</a></li>
+           <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+               <br/>HVAC</a></li>
+           <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+               <br/>Cinema</a></li>
+           <li><a href="shades.html"><img src="./icons/shades.svg"  />
+               <br/>shades</a></li>
+           <li><a href="camera.html"><img src="./icons/camera.svg"  />
+               <br/>Camera</a></li>
+           <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+              <br/> Consumption</a></li>
+           <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+              <br/>Irrigation</a></li>
+           <li><a href="pool.html"><img src="./icons/pool.svg"  />
+              <br/>Pool</a></li>
+           <li><a href="weather.html"><img src="./icons/weather.svg"  />
+              <br/>Weather</a></li>
+           <li><a href="settings.html"><img src="./icons/settings.svg"  />
+               <br/>Settings</a></li>
+       </ul>
+   </nav>
+</div>
+ 
+
+</body>
+</html>

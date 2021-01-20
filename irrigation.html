@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        .irZoneBtnUpColor{
+            background: #15d3e8;
+        }
+        
+    </style>
+    
+</head>
+<body ng-app="mainApp" >
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/irrigation.svg"  /></button>
+      <button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;"></button>
+      <span style="margin-left:35em;">Irrigation</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="main">
+<div id="irrigationMain">
+    <div id="irrigationBgImg">
+        <div id="irrigationBtns">
+            <button type="button" class="irControl" ng-click="irrigationScheduleBtn=!irrigationScheduleBtn" ng-class="irrigationScheduleBtn ? 'btn-success':'btn'">
+                <img src="./icons/hvacheating.svg" /><br/>
+                <span style="font-size: 0.7em;">Schedule</span><br/><span style="font-size: 0.7em;" ng-bind="irrigationScheduleBtn ? 'ON' : 'OFF'"></span>
+            </button>
+            <button type="button" class="irControl" style="background: none;">
+                <img src="./icons/right.svg" style="background : white; border-radius : 50%;"/><br/><br/>
+                <span style="font-size: 0.9em;">Start</span>
+            </button>
+            <button type="button" class="irControl" style="background: none;">
+                <div style="background-color : white; width: 1.5em; height : 1.5em; margin: auto"></div><br/>
+                <span style="font-size: 0.9em;">Stop</span>
+            </button>
+            <button type="button" class="irControl" style="background: none;">
+                <img src="./icons/waterlevel.svg" /><br/>
+                <span style="font-size: 0.7em;">Water</span><br/><span style="font-size: 0.8em;">Level</span>
+            </button>
+            <button type="button" class="irControl" style="background: none;">
+                <img src="./icons/temparature.svg" /><br/>
+                <span style="font-size: 0.7em;">Low temp.</span><br/><span style="font-size: 0.8em;">YES</span>
+            </button>
+            <button type="button" class="irControl" style="background: none;">
+                <img src="./icons/rain.svg" /><br/>
+                <span style="font-size: 0.7em;">Rain</span><br/><span style="font-size: 0.8em;">NO</span>
+            </button>
+        </div>
+        <div id="irrigationWs">
+            <p style="text-align: center; font-size:0.9em">Weatherstation</p>
+            <div style="width: 96%; margin:auto ;height: 8.9em; background :#d5d5de">
+                <button type="button" class="irWs" disabled>
+                    <img src="./icons/temparature.svg" /><br/>
+                    <span style="font-size: 0.7em;">Schedule</span><br/><span style="font-size: 0.8em;">ON</span>
+                </button>
+                <button type="button" class="irWs" disabled>
+                    <img src="./icons/brightness.svg" /><br/>
+                    <span style="font-size: 0.7em;">Brightness</span><br/><span style="font-size: 0.8em;">6776</span>
+                </button>
+                <button type="button" class="irWs" disabled>
+                    <img src="./icons/wind.svg" /><br/>
+                    <span style="font-size: 0.7em;">Wind</span><br/><span style="font-size: 0.8em;">NO</span>
+                </button>
+                <button type="button" class="irWs" disabled>
+                    <img src="./icons/rain.svg" /><br/>
+                    <span style="font-size: 0.7em;">Rain</span><br/><span style="font-size: 0.8em;">NO</span>
+                </button>
+            </div>
+        </div>
+        <div class="irZone" style="position:absolute; left:1em; top:17em" ng-init="irrigationZone1Btn='OFF'; zone1BtnColor='downColor'">
+            <button type="button" class="zoneBtn" style="background: white;"  ng-click="irrigationZone1Btn='ON';zone1BtnColor='irZoneBtnUpColor'"  ng-class="zone1BtnColor">
+                <img src="./icons/right.svg"/><br/>
+                <span style="font-size: 0.8em;">Zone1</span>
+            </button>
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone1Btn='OFF';zone1BtnColor='downColor'"  ng-class="zone1BtnColor">
+                <div style="background-color : white; width: 1em; height : 1em; margin: auto; border : 0.1em solid black; margin-bottom: 0.5em"></div>
+                <span style="font-size: 0.8em;">Stop</span>
+            </button> 
+            <button type="button" class="zoneBtn" ng-class="zone1BtnColor">
+                <img src="./icons/irrigationzone.svg"/><br/>
+                <span style="font-size: 0.7em;">Value</span>&nbsp;<span style="font-size: 0.8em;">{{irrigationZone1Btn}}</span>
+            </button>
+        </div>
+        <div class="irZone" style="position:absolute; left:18em; top:17em" ng-init="irrigationZone3Btn='OFF'; zone3BtnColor='downColor'">
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone3Btn='ON';zone3BtnColor='irZoneBtnUpColor'" ng-class="zone3BtnColor">
+                <img src="./icons/right.svg"/><br/>
+                <span style="font-size: 0.8em;">Zone3</span>
+            </button>
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone3Btn='OFF';zone3BtnColor='downColor'" ng-class="zone3BtnColor">
+                <div style="background-color : white; width: 1em; height : 1em; margin: auto; border : 0.1em solid black; margin-bottom: 0.5em"></div>
+                <span style="font-size: 0.8em;">Stop</span>
+            </button> 
+            <button type="button" class="zoneBtn" ng-class="zone3BtnColor">
+                <img src="./icons/irrigationzone.svg"/><br/>
+                <span style="font-size: 0.7em;">Value</span>&nbsp;<span style="font-size: 0.8em;">{{irrigationZone3Btn}}</span>
+            </button>
+        </div>
+        <div class="irZone" style="position:absolute; left:35em; top:17em" ng-init="irrigationZone5Btn='OFF'; zone5BtnColor='downColor'">
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone5Btn='ON';zone5BtnColor='irZoneBtnUpColor'" ng-class="zone5BtnColor">
+                <img src="./icons/right.svg"/><br/>
+                <span style="font-size: 0.8em;">Zone5</span>
+            </button>
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone5Btn='OFF'; zone5BtnColor='downColor'" ng-class="zone5BtnColor">
+                <div style="background-color : white; width: 1em; height : 1em; margin: auto; border : 0.1em solid black; margin-bottom: 0.5em"></div>
+                <span style="font-size: 0.8em;">Stop</span>
+            </button> 
+            <button type="button" class="zoneBtn" ng-class="zone5BtnColor">
+                <img src="./icons/irrigationzone.svg"/><br/>
+                <span style="font-size: 0.7em;">Value</span>&nbsp;<span style="font-size: 0.8em;">{{irrigationZone5Btn}}</span>
+            </button>
+        </div>
+        <div class="irZone" style="position:absolute; left:5em; top:25em" ng-init="irrigationZone2Btn='OFF'; zone2BtnColor='downColor'">
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone2Btn='ON';zone2BtnColor='irZoneBtnUpColor'" ng-class="zone2BtnColor">
+                <img src="./icons/right.svg"/><br/>
+                <span style="font-size: 0.8em;">Zone2</span>
+            </button>
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone2Btn='OFF';zone2BtnColor='downColor'" ng-class="zone2BtnColor">
+                <div style="background-color : white; width: 1em; height : 1em; margin: auto; border : 0.1em solid black; margin-bottom: 0.5em"></div>
+                <span style="font-size: 0.8em;">Stop</span>
+            </button> 
+            <button type="button" class="zoneBtn" ng-class="zone2BtnColor">
+                <img src="./icons/irrigationzone.svg"/><br/>
+                <span style="font-size: 0.7em;">Value</span>&nbsp;<span style="font-size: 0.8em;">{{irrigationZone2Btn}}</span>
+            </button>
+        </div>
+        <div class="irZone" style="position:absolute; left:22em; top:25em" ng-init="irrigationZone4Btn='OFF'; zone4BtnColor='downColor'">
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone4Btn='ON';zone4BtnColor='irZoneBtnUpColor'" ng-class="zone4BtnColor">
+                <img src="./icons/right.svg"/><br/>
+                <span style="font-size: 0.8em;">Zone4</span>
+            </button>
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone4Btn='OFF';zone4BtnColor='downColor'" ng-class="zone4BtnColor">
+                <div style="background-color : white; width: 1em; height : 1em; margin: auto; border : 0.1em solid black; margin-bottom: 0.5em"></div>
+                <span style="font-size: 0.8em;">Stop</span>
+            </button> 
+            <button type="button" class="zoneBtn" ng-class="zone4BtnColor">
+                <img src="./icons/irrigationzone.svg"/><br/>
+                <span style="font-size: 0.7em;">Value</span>&nbsp;<span style="font-size: 0.8em;">{{irrigationZone4Btn}}</span>
+            </button>
+        </div>
+        <div class="irZone" style="position:absolute; left:39em; top:25em" ng-init="irrigationZone6Btn='OFF'; zone6BtnColor='downColor'">
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone6Btn='ON';zone6BtnColor='irZoneBtnUpColor'" ng-class="zone6BtnColor">
+                <img src="./icons/right.svg"/><br/>
+                <span style="font-size: 0.8em;">Zone6</span>
+            </button>
+            <button type="button" class="zoneBtn" style="background: white;" ng-click="irrigationZone6Btn='OFF';zone6BtnColor='downColor'" ng-class="zone6BtnColor">
+                <div style="background-color : white; width: 1em; height : 1em; margin: auto; border : 0.1em solid black; margin-bottom: 0.5em"></div>
+                <span style="font-size: 0.8em;">Stop</span>
+            </button> 
+            <button Btntype="button" class="zoneBtn" ng-class="zone6BtnColor">
+                <img src="./icons/irrigationzone.svg"/><br/>
+                <span style="font-size: 0.7em;">Value</span>&nbsp;<span style="font-size: 0.8em;">{{irrigationZone6Btn}}</span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+    <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color : #EEE;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="glyphicon glyphicon-wrench"></span>
+                <span style="margin-left: 9em;">Settings</span>
+            </div>
+            <div class="modal-body" style="height:80vh;">
+               <h3>Language</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav">
+   <nav class="header">
+       <ul>
+           <li><a href="home.html"><img src="./icons/home.svg"  />
+               <br/>Demo</a></li>
+           <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+               <br/>Rooms</a></li>
+           <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+               <br/>Alarm</a></li>
+           <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+               <br/>HVAC</a></li>
+           <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+               <br/>Cinema</a></li>
+           <li><a href="shades.html"><img src="./icons/shades.svg"  />
+               <br/>shades</a></li>
+           <li><a href="camera.html"><img src="./icons/camera.svg"  />
+               <br/>Camera</a></li>
+           <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+              <br/> Consumption</a></li>
+           <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+              <br/>Irrigation</a></li>
+           <li><a href="pool.html"><img src="./icons/pool.svg"  />
+              <br/>Pool</a></li>
+           <li><a href="weather.html"><img src="./icons/weather.svg"  />
+              <br/>Weather</a></li>
+           <li><a href="settings.html"><img src="./icons/settings.svg"  />
+               <br/>Settings</a></li>
+       </ul>
+   </nav>
+</div>
+ 
+
+</body>
+</html>

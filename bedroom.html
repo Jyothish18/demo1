@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/dateScript.js"></script>
+    <style>
+        
+    </style>
+    
+</head>
+<body ng-app="mainApp" >
+    <div ng-controller="leftNavCtrl">
+    <div id="topDemo">
+      <button type="button" ng-click="showHideLeft()"><img width="30em" height="30em" src="./icons/bedroom.svg"  /></button>
+      <a href="rooms.html"><button type="button"  class="glyphicon glyphicon-menu-left" style="margin-left:2em;"></button></a>
+      <span style="margin-left:35em;">Bed Room</span>
+      <button type="button" class="glyphicon glyphicon-time" style="margin-left: 45em" data-toggle="modal" data-target="#homeModal1"></button>
+      <button type="button" ng-click="showHideRight()" class="glyphicon glyphicon-menu-hamburger "></button>
+      
+    </div>
+
+    <div class="leftNav" ng-show="leftNavToggle" style="z-index: 1;">
+        <h4 style="text-align : center;">Demo</h4><hr>
+        <div class="leftNavBtn">
+        <button type="button" ><img src="./icons/rooms.svg"  style="float:left"/><span style="float:left; margin-left:1em">Rooms</span></button><hr>
+        <button type="button" ><img src="./icons/alarm.svg"  style="float:left"/><span style="float:left; margin-left:1em">Alarm</span></button><hr>
+        <button type="button" ><img src="./icons/fire.svg"  style="float:left"/><span style="float:left; margin-left:1em">HVAC</span></button><hr>
+        <button type="button" ><img src="./icons/cinema.svg"  style="float:left"/><span style="float:left; margin-left:1em">Cinema</span></button><hr>
+        <button type="button" ><img src="./icons/shades.svg"  style="float:left"/><span style="float:left; margin-left:1em">Shades</span></button><hr>
+        <button type="button" ><img src="./icons/camera.svg"  style="float:left"/><span style="float:left; margin-left:1em">Camera</span></button><hr>
+        <button type="button" ><img src="./icons/consumption.svg"  style="float:left"/><span style="float:left; margin-left:1em">Consumption</span></button><hr>
+        <button type="button" ><img src="./icons/irrigation.svg"  style="float:left"/><span style="float:left; margin-left:1em">Irrigation</span></button><hr>
+        <button type="button" ><img src="./icons/pool.svg"  style="float:left"/><span style="float:left; margin-left:1em">Pools</span></button><hr>
+        <button type="button" ><img src="./icons/weather.svg"  style="float:left"/><span style="float:left; margin-left:1em">Weather</span></button><hr>
+        <button type="button" ><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button>
+        </div>
+    </div>
+    <div class="rightNav" ng-show="rightNavToggle" style="z-index:1;">
+        <h4 style="text-align : center;">Rooms</h4><hr>
+        <div class="rightNavBtn">
+        <button type="button" data-toggle="modal" data-target="#homeModal4"><img src="./icons/settings.svg"  style="float:left"/><span style="float:left; margin-left:1em">Settings</span></button><hr>
+        <button type="button" ><img src="./icons/logout.svg"  style="float:left"/><span style="float:left; margin-left:1em">Logout</span></button><hr>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="homeModal1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:25em;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color : #EEE;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="glyphicon glyphicon-time"></button>
+                    <span style="margin-left: 8em;">Events</span>
+                    <button type="button" style="margin-left:5em"class="glyphicon glyphicon-envelope"></button>
+                </div>
+                <div class="modal-body" style="height:80vh; overflow-y: scroll;">
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p><hr>
+                   <p> General mode </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="main">
+    <div id="bedroomMain">
+        <div id="bedroomLighting">
+            <h5 style="text-align: center; margin: 0; padding: 0;">Lighting</h5>
+            <button class="bedroomLg" style="margin: 3% 2% 0.5% 2%" ng-click="bedroomLightingBedLeft=!bedroomLightingBedLeft">
+                <img src="./icons/bedlamp.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Bed Left</span>
+                <span style="float: right; font-size: 1.2em;" ng-bind="bedroomLightingBedLeft ? 'ON':'OFF'"></span>
+            </button>
+            <button class="bedroomLg" style="margin: 0.5% 2% 0.5% 2%" ng-click="bedroomLightingBedRight=!bedroomLightingBedRight">
+                <img src="./icons/bedlamp.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Bed Right</span>
+                <span style="float: right; font-size: 1.2em;" ng-bind="bedroomLightingBedRight ? 'ON':'OFF'"></span>
+            </button>
+            <button class="bedroomLg" style="margin: 0.5% 2% 0.5% 2%">
+                <img src="./icons/cctv.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Ceiling</span>
+                <span style="float: right; font-size: 1.2em;">0%</span>
+            </button>
+            <button style="margin: 0.5% 0.5% 0.5% 2%; width:70%; float: left; height:4.5em; background: white;" ng-click="bedroomLightsCloset=!bedroomLightsCloset">
+                <img src="./icons/poolbulb.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Closet</span>
+                <span style="float: right; font-size: 1.2em;" ng-bind="bedroomLightsCloset ? 'ON':'OFF'"></span>
+            </button>
+            <button style="float: left; margin: 0.5% 2% 0.5% 0.5%; width: 25%; height:2.15em; background: white;" data-target="#bedroomLighting1" data-toggle="modal">
+                <span style="font-size:0.9em">Time</span>&nbsp;<span style="font-size:0.9em">{{bedroomLightingTime}}</span>
+            </button>
+            <button style="float: left; margin: 0.5% 2% 0.5% 0.5%; width: 25%; height:2.15em; background: white;" ng-click="bedroomLightsCloset=!bedroomLightsCloset">
+                <span style="font-size:0.8em">Blocked</span>&nbsp;<span style="font-size: 0.8em;" ng-bind="bedroomLightsCloset ? 'YES' : 'NO'"></span>
+            </button>
+            <button style=" height: 4.5em; width: 22.5%; position:absolute; left:0.5em; top:21.2em" ng-init="bedroomLightUp='downColor'" ng-class="bedroomLightUp"  ng-click="bedroomLightUp='upColor'">
+                <img src="./icons/top.svg"  width="20em" height="20em"/><br/>
+                <span >UP</span>
+            </button>
+            <button style="width: 48%; height:4.5em;background: white; position: absolute; top:21.2em; left:5.68em" ng-click="bedroomLightingBedroom=!bedroomLightingBedroom">
+                <img src="./icons/poolbulb.svg" height="20em" width="20em" /><br/>
+                <span style="font-size: 0.9em;">Bed room</span> &nbsp;<span ng-bind="bedroomLightingBedroom ? 'ON':'OFF'"></span>
+            </button>
+            <button style=" height: 4.5em; width: 22.5%;background: white; position: absolute; left: 16.5em; top:21.2em" ng-class="bedroomLightUp" ng-click="bedroomLightUp='downColor'">
+                <img src="./icons/bottom.svg"  width="20em" height="20em"/><br/>
+                <span >Down</span>
+            </button>
+        </div>
+        <div id="bedroomShades">
+            <h5 style="text-align: center; margin: 0; padding: 0;">Shades</h5>
+            <button class="bedroomLg" style="margin: 3% 2% 0.5% 2%">
+                <img src="./icons/waterlevel.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Shutter</span>
+                <span style="float: right; font-size: 1.2em;">100%</span>
+            </button>
+            <button style="margin: 0.5% 0.5% 0.5% 2%; width:70%; float: left; height:4.5em; background: white;">
+                <img src="./icons/bedroom.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Bed room</span>
+                <span style="float: right; font-size: 1.2em;">100%</span>
+            </button>
+            <button style="margin:0.5% 2% 0.5% 0.5%; width:25%; height: 4.5em; background: white; float:left">
+                <img src="./icons/tilt.svg" width="20em" height="20em" /><br/>
+                <span>Tilt 30%</span>
+            </button>
+        </div>
+        <div id="bedroomHeating">
+            <h5 style="text-align: center; margin: 0; padding: 0;">Heating</h5>
+            <button class="bedroomLg" style="margin: 3% 2% 0.5% 2%" data-toggle="modal" data-target="#bedroomHeating1">
+                <img src="./icons/temparature.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Sitepoint</span>
+                <span style="float: right; font-size: 1.2em;">{{bedroomHeatingSitePoint1}}.0&#8451;</span>
+            </button>
+            <button class="bedroomLg" style="margin: 0.5% 2% 0.5% 2%">
+                <img src="./icons/temparature.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Temparature</span>
+                <span style="float: right; font-size: 1.2em;">21.4&#8451;</span>
+            </button>
+            <button class="bedroomLg" style="margin: 0.5% 2% 0.5% 2%">
+                <img src="./icons/temparature.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Sitepoint</span>
+                <span style="float: right; font-size: 1.2em;">0.0&#8451;</span>
+            </button>
+            <button class="bedroomLg" style="margin: 0.5% 2% 0.5% 2%">
+                <img src="./icons/valve.svg" width="35em" height="35em" style="float:left;" />
+                <span style="margin-left: 1em; font-size: 1.1em; float: left;">Valve Position</span>
+                <span style="float: right; font-size: 1.2em;">0%</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="bedroomHeating1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:30em;position: absolute; left:50em;">
+            <div class="modal-content" >
+                <div class="modal-header" style="background-color:#ded9d9;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span><img src="./icons/temparature.svg" width="25em" height="25em" /></span>
+                    <span style="margin-left: 5em; font-size: 1.5em">Sitepoint</span>
+                </div>
+                <div class="modal-body" style="height:70vh;" ng-init="bedroomHeatingSitePoint1=16">
+                    <button type="button" ng-disabled="(bedroomHeatingSitePoint1+1)>30" ng-click="bedroomHeatingSitePoint1=bedroomHeatingSitePoint1+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                    <h2 style="text-align: center;">{{bedroomHeatingSitePoint1}} &#8451;</h2>
+                    <button type="button" ng-click="bedroomHeatingSitePoint1>7 ? bedroomHeatingSitePoint1=bedroomHeatingSitePoint1-1 : bedroomHeatingSitePoint1=7" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="bedroomLighting1" class="homeModal1" role="dialog">
+        <div class="modal-dialog" style="width:30em;position: absolute; left:20em;">
+            <div class="modal-content" >
+                <div class="modal-header" style="background-color:#ded9d9;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span><img src="./icons/time.svg" width="25em" height="25em" /></span>
+                    <span style="margin-left: 6em; font-size: 1.5em">Time</span>
+                </div>
+                <div class="modal-body" style="height:70vh;" ng-init="bedroomLightingTime=6">
+                    <button type="button" ng-click="bedroomLightingTime=bedroomLightingTime+1"  class="glyphicon glyphicon-chevron-up" style="margin: 2em 13em"></button>
+                    <h2 style="text-align: center;">{{bedroomLightingTime}}S</h2>
+                    <button type="button" ng-click="bedroomLightingTime=bedroomLightingTime-1" class="glyphicon glyphicon-chevron-down" style="margin: 2em 13em"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="glyphicon glyphicon-ok" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="modal fade" id="homeModal4" class="homeModal1" role="dialog">
+    <div class="modal-dialog" style="width:25em;position: absolute; left:30em;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color : #EEE;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="glyphicon glyphicon-wrench"></span>
+                <span style="margin-left: 9em;">Settings</span>
+            </div>
+            <div class="modal-body" style="height:80vh;">
+               <h3>Language</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav">
+   <nav class="header">
+       <ul>
+           <li><a href="home.html"><img src="./icons/home.svg"  />
+               <br/>Demo</a></li>
+           <li><a href="rooms.html"><img src="./icons/rooms.svg" />
+               <br/>Rooms</a></li>
+           <li><a href="alarm.html"><img src="./icons/alarm.svg"  />
+               <br/>Alarm</a></li>
+           <li><a href="hvac.html"><img src="./icons/fire.svg"  />
+               <br/>HVAC</a></li>
+           <li><a href="cinema.html"><img src="./icons/cinema.svg"  />
+               <br/>Cinema</a></li>
+           <li><a href="shades.html"><img src="./icons/shades.svg"  />
+               <br/>shades</a></li>
+           <li><a href="camera.html"><img src="./icons/camera.svg"  />
+               <br/>Camera</a></li>
+           <li><a href="consumption.html"><img src="./icons/consumption.svg" />
+              <br/> Consumption</a></li>
+           <li><a href="irrigation.html"><img src="./icons/irrigation.svg"  />
+              <br/>Irrigation</a></li>
+           <li><a href="pool.html"><img src="./icons/pool.svg"  />
+              <br/>Pool</a></li>
+           <li><a href="weather.html"><img src="./icons/weather.svg"  />
+              <br/>Weather</a></li>
+           <li><a href="settings.html"><img src="./icons/settings.svg"  />
+               <br/>Settings</a></li>
+       </ul>
+   </nav>
+</div>
+ 
+
+</body>
+</html>
